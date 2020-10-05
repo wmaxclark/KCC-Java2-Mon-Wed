@@ -44,6 +44,9 @@ public abstract class Animal{
     // TODO: Need getFixed method - Vinayak
     
     // TODO: Need setFixed method - Chantal
+    public void setFixed(boolean fixed) {
+        this.fixed = fixed;
+    }
     
     // TODO: Need getLegs method - Haley
     
