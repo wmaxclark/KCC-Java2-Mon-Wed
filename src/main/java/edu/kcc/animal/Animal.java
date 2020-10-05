@@ -46,6 +46,9 @@ public abstract class Animal{
     // TODO: Need setFixed method - Chantal
     
     // TODO: Need getLegs method - Haley
+    public int getLegs(){
+        return legs;
+    }
     
     // TODO: Need setLegs method - Bonny
     
