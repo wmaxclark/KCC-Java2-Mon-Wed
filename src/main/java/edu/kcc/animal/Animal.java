@@ -53,6 +53,9 @@ public abstract class Animal{
     // TODO: Need setLegs method - Bonny
     
     // TODO: Need getWeight method - Melissa
+    public BigDecimal getWeight() {
+        return weight;
+    }
     
     // TODO: Need setWeight method - Ryan
     
