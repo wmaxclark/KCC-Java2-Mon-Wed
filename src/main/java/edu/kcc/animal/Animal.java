@@ -42,7 +42,7 @@ public abstract class Animal{
     // TODO: Need setAge method - Joseph
     
     // TODO: Need getFixed method - Vinayak
-    public boolean isFixed() {    
+    public boolean getFixed() {    
         return fixed;
     }
 
