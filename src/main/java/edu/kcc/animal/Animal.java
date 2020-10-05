@@ -60,6 +60,9 @@ public abstract class Animal{
     // TODO: Need getLastFeedingTime method - Andrea
     
     // TODO: Need setLastFeedingTime method
+    public void setLastFeedingTime(LocalDateTime ldt) {
+        lastFeedingTime = ldt;
+    }
     
     // TODO: Need toString method
     
