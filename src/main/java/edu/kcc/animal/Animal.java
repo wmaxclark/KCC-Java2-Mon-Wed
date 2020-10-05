@@ -47,14 +47,25 @@ public abstract class Animal{
     }
 
     // TODO: Need setFixed method - Chantal
+    
     // TODO: Need getLegs method - Haley
+    
     // TODO: Need setLegs method - Bonny
+    
     // TODO: Need getWeight method - Melissa
+    
     // TODO: Need setWeight method - Ryan
+    
     // TODO: Need getDateAdded method - Nick
+    
     // TODO: Need setDateAdded method - Jory
+    
     // TODO: Need getLastFeedingTime method - Andrea
+    
     // TODO: Need setLastFeedingTime method
+    
     // TODO: Need toString method
+    
     // TODO: Need compareTo method
+    
 }
