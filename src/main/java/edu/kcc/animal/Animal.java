@@ -25,11 +25,17 @@ public abstract class Animal{
     private LocalDate dateAdded;
     private LocalDateTime lastFeedingTime;
 
+
+    
+
     // TODO: Need full constructor
     
     // TODO: Need default constructor
 
     // TODO: Need getName method - Fadwa
+    public String getName(){
+        return name;
+    }
     
     // TODO: Need setName method - Chase
     
