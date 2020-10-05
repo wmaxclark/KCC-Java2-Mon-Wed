@@ -36,7 +36,9 @@ public abstract class Animal{
     // TODO: Need getSpecies method - Becky
     
     // TODO: Need getGender method - Whitney
-    
+    public String getGender(){
+        return gender;
+    }
     // TODO: Need getAge method - William
     
     // TODO: Need setAge method - Joseph
