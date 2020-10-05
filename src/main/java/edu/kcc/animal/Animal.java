@@ -56,6 +56,9 @@ public abstract class Animal{
     // TODO: Need getDateAdded method - Nick
     
     // TODO: Need setDateAdded method - Jory
+    public void setDateAdded(LocalDate ldt){
+        dateAdded = ldt;
+    }
     
     // TODO: Need getLastFeedingTime method - Andrea
     
