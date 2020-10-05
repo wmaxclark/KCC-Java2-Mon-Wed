@@ -70,7 +70,9 @@ public abstract class Animal{
     }
     
     // TODO: Need setWeight method - Ryan
-    
+    public void  setWeight(BigDecimal lb){
+        this.weight = lb;
+    }
     // TODO: Need getDateAdded method - Nick
     
     // TODO: Need setDateAdded method - Jory
