@@ -48,7 +48,10 @@ public abstract class Animal{
     // TODO: Need setAge method - Joseph
     
     // TODO: Need getFixed method - Vinayak
-    
+    public boolean getFixed() {    
+        return fixed;
+    }
+
     // TODO: Need setFixed method - Chantal
     public void setFixed(boolean fixed) {
         this.fixed = fixed;
@@ -79,4 +82,5 @@ public abstract class Animal{
     // TODO: Need toString method
     
     // TODO: Need compareTo method
+    
 }
