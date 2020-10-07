@@ -13,8 +13,8 @@ import java.time.LocalDateTime;
  *
  * @author k0519415
  */
-public abstract class Animal{
-   
+public abstract class Animal {
+
     private String name;
     private String species;
     private String gender;
@@ -32,9 +32,11 @@ public abstract class Animal{
     // TODO: Need getName method - Fadwa
     
     // TODO: Need setName method - Chase
-    
+    public void setName(String name) {
+        this.name = name;
+    }
     // TODO: Need getSpecies method - Becky
-    
+
     // TODO: Need getGender method - Whitney
     
     // TODO: Need getAge method - William
