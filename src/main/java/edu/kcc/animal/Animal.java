@@ -25,18 +25,29 @@ public abstract class Animal{
     private LocalDate dateAdded;
     private LocalDateTime lastFeedingTime;
 
+
+    
+
     // TODO: Need full constructor
     
     // TODO: Need default constructor
 
     // TODO: Need getName method - Fadwa
+    public String getName(){
+        return name;
+    }
     
     // TODO: Need setName method - Chase
     
     // TODO: Need getSpecies method - Becky
-    
+    public String getSpecies(){
+        return species;
+    }
     // TODO: Need getGender method - Whitney
-    
+    public String getGender(){
+        return gender;
+    }
+    // TODO: Need getAge method - William
     /**
      * 
      * @return the age of the animal
@@ -48,23 +59,37 @@ public abstract class Animal{
     // TODO: Need setAge method - Joseph
     
     // TODO: Need getFixed method - Vinayak
-    
+    public boolean getFixed() {    
+        return fixed;
+    }
+
     // TODO: Need setFixed method - Chantal
     public void setFixed(boolean fixed) {
         this.fixed = fixed;
     }
     
     // TODO: Need getLegs method - Haley
+    public int getLegs(){
+        return legs;
+    }
     
     // TODO: Need setLegs method - Bonny
     
     // TODO: Need getWeight method - Melissa
+    public BigDecimal getWeight() {
+        return weight;
+    }
     
     // TODO: Need setWeight method - Ryan
-    
+    public void  setWeight(BigDecimal lb){
+        this.weight = lb;
+    }
     // TODO: Need getDateAdded method - Nick
     
     // TODO: Need setDateAdded method - Jory
+    public void setDateAdded(LocalDate ldt){
+        dateAdded = ldt;
+    }
     
     // TODO: Need getLastFeedingTime method - Andrea
     
@@ -76,4 +101,5 @@ public abstract class Animal{
     // TODO: Need toString method
     
     // TODO: Need compareTo method
+    
 }
