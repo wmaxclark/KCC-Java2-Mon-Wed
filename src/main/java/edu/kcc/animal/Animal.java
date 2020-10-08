@@ -48,6 +48,13 @@ public abstract class Animal{
         return gender;
     }
     // TODO: Need getAge method - William
+    /**
+     * 
+     * @return the age of the animal
+     */
+    public int getAge(){
+        return age;
+    }
     
     // TODO: Need setAge method - Joseph
     
