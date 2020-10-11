@@ -42,13 +42,10 @@ public abstract class Animal {
         this.name = name;
     }
     // TODO: Need getSpecies method - Becky
-<<<<<<< HEAD
 
-=======
     public String getSpecies(){
         return species;
     }
->>>>>>> 6b786ab8214ce4a9e76bebeea6fbcdb21b2f0325
     // TODO: Need getGender method - Whitney
     public String getGender(){
         return gender;
