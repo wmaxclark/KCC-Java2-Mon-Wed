@@ -111,9 +111,7 @@ public class Animal {
     // TODO: Need dateValidator method - only allow dates up to a week in the past (Ryan)
     
     // TODO: Need getLastFeedingTime method (Haley)
-    public LocalDateTime getLastFeedingTime(){
-        return lastFeedingTime;
-    }
+
 
     
     public void setLastFeedingTime(LocalDateTime ldt) {
