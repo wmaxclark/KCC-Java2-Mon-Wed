@@ -120,6 +120,11 @@ public class Animal {
     // TODO: Need feedingValidator method - only allow day/times up to two days in the past (Vinayak)
     
     // TODO: Need toString method - include name, species, gender, age, and weight (Melissa)
+    @Override
+    public String toString() {
+        return "Animal {name: " + name + ", species: " + species + ", gender: "
+                + gender + ", age: " + age + ", weight: " + weight + "}";
+    }
     
     // TODO: Need compareTo method - Compare by their species first, then by their name (Chantal)
     
