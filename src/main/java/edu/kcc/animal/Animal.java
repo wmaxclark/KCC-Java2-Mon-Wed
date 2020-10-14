@@ -96,6 +96,13 @@ public class Animal implements Comparable<Animal>{
     // TODO: Need setLegs method (Becky)
     
     // TODO: Need legsValidator method - only allow legs 0 to 4 (Fadwa)
+    public void legsValidator(int legs)
+    {
+        if (legs>4 || legs<0)
+        {
+            throw new IllegalArgumentException("Legs are only allowed to be between 0 and 4");
+        }
+    }
     
 
     public BigDecimal getWeight() {
