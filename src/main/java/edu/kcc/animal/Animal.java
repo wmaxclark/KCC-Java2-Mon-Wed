@@ -43,6 +43,9 @@ public class Animal implements Comparable<Animal>{
     }
 
     // TODO: Need setId method (Melissa)
+    public void setId(String id) {
+        this.id = id;
+    }
     
     // TODO: Need idValidator method - Only allow it to change if it's "0". Do not allow an id to be set if the id is already in the idList (Jory)
     public String getName() {
@@ -128,6 +131,11 @@ public class Animal implements Comparable<Animal>{
 
     
     // TODO: Need toString method - include name, species, gender, age, and weight (Melissa)
+    @Override
+    public String toString() {
+        return "Animal {name: " + name + ", species: " + species + ", gender: "
+                + gender + ", age: " + age + ", weight: " + weight + "}";
+    }
     
     // TODO: Need compareTo method - Compare by their species first, then by their name (Chantal)
     @Override
