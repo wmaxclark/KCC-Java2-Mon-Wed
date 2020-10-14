@@ -68,6 +68,12 @@ public class AnimalTest {
     }
     
     // TODO - Need testGetWeight method (Chantal)
+    @Test
+    public void testGetWeight() {
+        BigDecimal expResult = new BigDecimal(0);
+        BigDecimal result = animal.getWeight();
+        assertEquals(expResult,result);
+    }
     
     // TODO - Need testGetDateAdded method
     
