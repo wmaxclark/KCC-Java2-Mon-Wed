@@ -21,6 +21,20 @@ public class Animal implements Comparable<Animal>{
     private LocalDateTime lastFeedingTime;
 
     // TODO: Need full constructor (Ryan)
+    public Animal(String Id, String Name, String Gender, int Age, boolean Fixed,
+            int Legs, BigDecimal Weight, LocalDate DateAdded, 
+            LocalDateTime LastFeedingTime){
+        setId(Id);
+        setName(Name);
+        setGender(Gender);
+        setAge(Age);
+        setFixed(Fixed);
+        setLegs(Legs);
+        setWeight(Weight);
+        setDateAdded(DateAdded);
+        setLastFeedingTime(LastFeedingTime);
+    }
+    
     
     public Animal() {
         id = "0";
