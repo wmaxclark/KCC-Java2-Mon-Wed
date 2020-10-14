@@ -47,9 +47,9 @@ public class AnimalTest {
     
     // TODO - Need testGetAge method (Fadwa)
     
-    // TODO - Need testGetFixed method
+    // TODO - Need testGetFixed method (Ryan)
     
-    // TODO - Need testGetId method
+    // TODO - Need testGetId method (Joseph)
     
     // TODO - Need testGeLegs method
     

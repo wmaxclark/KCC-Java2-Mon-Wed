@@ -56,7 +56,7 @@ public class Animal {
     
     // TODO: Need setSpecies method (Haley)
     
-    // TODO: Need speciesValidator method - Only allow cat and dog. Only allow it to change if it's "Unknown". (William)
+    // TODO: Need speciesValidator method - Only allow cat and dog. Only allow it to change if it's "Unknown". (Nick)
     
     public String getGender(){
         return gender;
@@ -99,13 +99,13 @@ public class Animal {
     
     // TODO: Need weightValidator method - only allow weight 0.0 to 1000.0 (Jory)
     
-    // TODO: Need getDateAdded method (William)
+    // TODO: Need getDateAdded method (Nick)
     
     public void setDateAdded(LocalDate ldt){
         dateAdded = ldt;
     }
     
-    // TODO: Need dateValidator method - only allow dates up to a week in the past (Ryan)
+    // TODO: Need dateValidator method - only allow dates up to a week in the past (Joseph)
     
     // TODO: Need getLastFeedingTime method (Haley)
     
