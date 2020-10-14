@@ -1,20 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package edu.kcc.animal;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-/**
- *
- * @author k0519415
- */
 public abstract class Animal {
 
+    private String id;
     private String name;
     private String species;
     private String gender;
@@ -25,84 +17,86 @@ public abstract class Animal {
     private LocalDate dateAdded;
     private LocalDateTime lastFeedingTime;
 
-
+    // TODO: Need full constructor (Ryan)
     
-
-    // TODO: Need full constructor
+    // TODO: Need default constructor with default values (Haley)
     
-    // TODO: Need default constructor
+    // TODO: Need getId method (Vinayak)
+    
+    // TODO: Need setId method (Melissa)
 
-    // TODO: Need getName method - Fadwa
     public String getName(){
         return name;
     }
     
-    // TODO: Need setName method - Chase
     public void setName(String name) {
         this.name = name;
     }
-    // TODO: Need getSpecies method - Becky
 
     public String getSpecies(){
         return species;
     }
-    // TODO: Need getGender method - Whitney
+    
     public String getGender(){
         return gender;
     }
-    // TODO: Need getAge method - William
-    /**
-     * 
-     * @return the age of the animal
-     */
+    
     public int getAge(){
         return age;
     }
     
-    // TODO: Need setAge method - Joseph
+    // TODO: Need setAge method (Chantal)
     
-    // TODO: Need getFixed method - Vinayak
+    // TODO: Need ageValidator method - only allow ages 0 to 100 (Chase)
+    
     public boolean getFixed() {    
         return fixed;
     }
 
-    // TODO: Need setFixed method - Chantal
     public void setFixed(boolean fixed) {
         this.fixed = fixed;
     }
     
-    // TODO: Need getLegs method - Haley
+    // TODO: Need fixedValidator method - don't allow an animal that is already fixed to be fixed again (Whitney)
+    
     public int getLegs(){
         return legs;
     }
     
-    // TODO: Need setLegs method - Bonny
+    // TODO: Need setLegs method (Becky)
     
-    // TODO: Need getWeight method - Melissa
+    // TODO: Need legsValidator method - only allow legs 0 to 4 (Fadwa)
+    
+
     public BigDecimal getWeight() {
         return weight;
     }
     
-    // TODO: Need setWeight method - Ryan
     public void  setWeight(BigDecimal lb){
         this.weight = lb;
     }
-    // TODO: Need getDateAdded method - Nick
     
-    // TODO: Need setDateAdded method - Jory
+    // TODO: Need weightValidator method - only allow weight 0.0 to 1000.0 (Jory)
+    
+    // TODO: Need getDateAdded method (William)
+    
     public void setDateAdded(LocalDate ldt){
         dateAdded = ldt;
     }
     
-    // TODO: Need getLastFeedingTime method - Andrea
+    // TODO: Need dateValidator method - only allow dates up to a week in the past (Ryan)
     
-    // TODO: Need setLastFeedingTime method
+    // TODO: Need getLastFeedingTime method (Haley)
+    
+    
     public void setLastFeedingTime(LocalDateTime ldt) {
         lastFeedingTime = ldt;
     }
     
-    // TODO: Need toString method
+    // TODO: Need feedingValidator method - only allow day/times up to two days in the past (Vinayak)
     
-    // TODO: Need compareTo method
+    // TODO: Need toString method (Melissa)
+    
+    // TODO: Need compareTo method - Compare by their species first, then by their name (Chantal)
     
 }
