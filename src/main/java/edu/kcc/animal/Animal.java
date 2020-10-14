@@ -108,7 +108,9 @@ public class Animal implements Comparable<Animal>{
     
     // TODO: Need weightValidator method - only allow weight 0.0 to 1000.0 (Jory)
     
-    // TODO: Need getDateAdded method (Nick)
+    public LocalDate getdateAdded(){
+        return dateAdded;
+    }
     
     public void setDateAdded(LocalDate ldt){
         dateAdded = ldt;
