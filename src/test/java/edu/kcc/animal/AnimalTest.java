@@ -52,6 +52,12 @@ public class AnimalTest {
     // TODO - Need testGetId method (Joseph)
     
     // TODO - Need testGeLegs method (Jory)
+    public void testGetLegs(){
+        setUp();
+        int expected = 4;
+        int actual = animal.getLegs();
+        assertEquals(expected, actual);
+    }
     
     // TODO - Need testGetWeight method (Chantal)
     

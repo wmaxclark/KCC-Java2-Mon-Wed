@@ -73,6 +73,9 @@ public class Animal implements Comparable<Animal>{
     }
     
     // TODO: Need setAge method (Jory)
+    public void setAge(int animalAge){
+        this.age = animalAge;
+    }
     
     // TODO: Need ageValidator method - only allow ages 0 to 100 (Chase)
     
