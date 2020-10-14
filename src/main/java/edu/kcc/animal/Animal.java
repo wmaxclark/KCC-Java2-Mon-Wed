@@ -66,7 +66,7 @@ public class Animal {
         return age;
     }
     
-    // TODO: Need setAge method (Chantal)
+    // TODO: Need setAge method (Jory)
     
     // TODO: Need ageValidator method - only allow ages 0 to 100 (Chase)
     

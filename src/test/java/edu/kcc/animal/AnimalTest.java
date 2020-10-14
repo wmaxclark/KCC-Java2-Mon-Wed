@@ -51,9 +51,9 @@ public class AnimalTest {
     
     // TODO - Need testGetId method (Joseph)
     
-    // TODO - Need testGeLegs method
+    // TODO - Need testGeLegs method (Jory)
     
-    // TODO - Need testGetWeight method
+    // TODO - Need testGetWeight method (Chantal)
     
     // TODO - Need testGetDateAdded method
     
