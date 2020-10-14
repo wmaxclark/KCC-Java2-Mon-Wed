@@ -55,7 +55,7 @@ public class Animal {
     }
     
     // TODO: Need setSpecies method (Haley)
-    public void setSpecies(){
+    public void setSpecies(String species){
         this.species = species;
     }
     
