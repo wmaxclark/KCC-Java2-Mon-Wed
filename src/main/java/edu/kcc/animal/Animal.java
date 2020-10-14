@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Animal {
+public class Animal implements Comparable<Animal>{
 
     private String id;
     private static List<String> idList = new ArrayList<>();
@@ -119,5 +119,14 @@ public class Animal {
     // TODO: Need toString method - include name, species, gender, age, and weight (Melissa)
     
     // TODO: Need compareTo method - Compare by their species first, then by their name (Chantal)
+    @Override
+    public int compareTo(Animal other) {
+        if (this.species.compareTo(other.species) != 0) {
+            return this.species.compareTo(other.species);
+        }
+        else {
+            return this.name.compareTo(other.name);
+        }
+    }
     
 }
