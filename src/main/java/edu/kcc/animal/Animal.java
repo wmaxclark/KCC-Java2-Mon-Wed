@@ -38,11 +38,14 @@ public class Animal {
     
     // TODO: Need getId method (Vinayak)
     
+    public String getId(){
+        return id;
+    }
+
     // TODO: Need setId method (Melissa)
     
     // TODO: Need idValidator method - Only allow it to change if it's "0". Do not allow an id to be set if the id is already in the idList (Jory)
-
-    public String getName(){
+    public String getName() {
         return name;
     }
     
@@ -115,6 +118,14 @@ public class Animal {
     }
     
     // TODO: Need feedingValidator method - only allow day/times up to two days in the past (Vinayak)
+    public void feedingValidator(LocalDateTime ldt){
+        LocalDateTime twoDaysAgo = LocalDateTime.now().minusDays(2);
+        if(ldt.isBefore(twoDaysAgo)){
+            throw new IllegalArgumentException(ldt + " is more than"
+                    + " two days in the past");
+        }
+    }
+
     
     // TODO: Need toString method - include name, species, gender, age, and weight (Melissa)
     
