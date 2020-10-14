@@ -38,11 +38,14 @@ public class Animal {
     
     // TODO: Need getId method (Vinayak)
     
+    public String getId(){
+        return id;
+    }
+
     // TODO: Need setId method (Melissa)
     
     // TODO: Need idValidator method - Only allow it to change if it's "0". Do not allow an id to be set if the id is already in the idList (Jory)
-
-    public String getName(){
+    public String getName() {
         return name;
     }
     
@@ -115,6 +118,8 @@ public class Animal {
     }
     
     // TODO: Need feedingValidator method - only allow day/times up to two days in the past (Vinayak)
+    
+
     
     // TODO: Need toString method - include name, species, gender, age, and weight (Melissa)
     
