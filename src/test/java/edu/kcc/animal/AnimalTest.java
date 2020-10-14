@@ -10,8 +10,10 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import org.junit.After;
 import org.junit.AfterClass;
+import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Test;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
@@ -46,6 +48,12 @@ public class AnimalTest {
     // TODO - Need testGetName method (Chase)
     
     // TODO - Need testGetAge method (Fadwa)
+    @Test
+    public void testGetAge(){
+        int expected=0;
+        int result=animal.getAge();
+        assertEquals(expected,result);
+    }
     
     // TODO - Need testGetFixed method
     
