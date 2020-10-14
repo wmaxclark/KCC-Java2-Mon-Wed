@@ -3,10 +3,13 @@ package edu.kcc.animal;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
-public abstract class Animal {
+public class Animal {
 
     private String id;
+    private static List<String> idList = new ArrayList<>();
     private String name;
     private String species;
     private String gender;
@@ -19,11 +22,25 @@ public abstract class Animal {
 
     // TODO: Need full constructor (Ryan)
     
-    // TODO: Need default constructor with default values (Haley)
+    public Animal() {
+        id = "0";
+        idList.add(id);
+        name = "Unknown";
+        species = "Unknown";
+        gender = "Unknown";
+        age = 0;
+        fixed = false;
+        legs = 4;
+        weight = BigDecimal.valueOf(0);
+        dateAdded = LocalDate.of(2020, 9, 1); // September 1, 2020
+        lastFeedingTime = LocalDateTime.of(2020, 10, 1, 23, 59); // October 1, 2020 at 11:59pm
+    }
     
     // TODO: Need getId method (Vinayak)
     
     // TODO: Need setId method (Melissa)
+    
+    // TODO: Need idValidator method - Only allow it to change if it's "0". Do not allow an id to be set if the id is already in the idList (Jory)
 
     public String getName(){
         return name;
@@ -36,6 +53,10 @@ public abstract class Animal {
     public String getSpecies(){
         return species;
     }
+    
+    // TODO: Need setSpecies method (Haley)
+    
+    // TODO: Need speciesValidator method - Only allow cat and dog. Only allow it to change if it's "Unknown". (William)
     
     public String getGender(){
         return gender;
@@ -95,7 +116,7 @@ public abstract class Animal {
     
     // TODO: Need feedingValidator method - only allow day/times up to two days in the past (Vinayak)
     
-    // TODO: Need toString method (Melissa)
+    // TODO: Need toString method - include name, species, gender, age, and weight (Melissa)
     
     // TODO: Need compareTo method - Compare by their species first, then by their name (Chantal)
     
