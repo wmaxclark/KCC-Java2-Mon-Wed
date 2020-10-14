@@ -55,6 +55,9 @@ public class Animal {
     }
     
     // TODO: Need setSpecies method (Haley)
+    public void setSpecies(){
+        this.species = species;
+    }
     
     // TODO: Need speciesValidator method - Only allow cat and dog. Only allow it to change if it's "Unknown". (William)
     
