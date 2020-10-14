@@ -39,6 +39,9 @@ public class Animal {
     // TODO: Need getId method (Vinayak)
     
     // TODO: Need setId method (Melissa)
+    public void setId(String id) {
+        this.id = id;
+    }
     
     // TODO: Need idValidator method - Only allow it to change if it's "0". Do not allow an id to be set if the id is already in the idList (Jory)
 
