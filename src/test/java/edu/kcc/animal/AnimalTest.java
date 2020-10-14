@@ -54,6 +54,7 @@ public class AnimalTest {
     // TODO - Need testGeLegs method (Jory)
     
     // TODO - Need testGetWeight method (Chantal)
+    @Test
     public void testGetWeight() {
         BigDecimal expResult = new BigDecimal(0);
         BigDecimal result = animal.getWeight();
