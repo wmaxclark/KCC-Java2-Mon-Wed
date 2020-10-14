@@ -48,7 +48,13 @@ public class AnimalTest {
     // TODO - Need testGetAge method (Fadwa)
     
     // TODO - Need testGetFixed method (Ryan)
-    
+    @org.junit.Test
+    public void testGetFixed(){
+        setUp();
+        boolean expected = false;
+        boolean actual = animal.getFixed();
+        assertEquals(expected, actual);
+    }
     // TODO - Need testGetId method (Joseph)
     
     // TODO - Need testGeLegs method (Jory)
