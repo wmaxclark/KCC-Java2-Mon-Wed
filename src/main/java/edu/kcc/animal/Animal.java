@@ -75,6 +75,9 @@ public class Animal implements Comparable<Animal>{
     }
     
     // TODO: Need setSpecies method (Haley)
+    public void setSpecies(String species){
+        this.species = species;
+    }
     
     // TODO: Need speciesValidator method - Only allow cat and dog. Only allow it to change if it's "Unknown". (Nick)
     
@@ -141,6 +144,10 @@ public class Animal implements Comparable<Animal>{
     
     // TODO: Need getLastFeedingTime method (Haley)
     
+    public LocalDateTime getLastFeedingTime(){
+        return lastFeedingTime;
+    }
+
     
     public void setLastFeedingTime(LocalDateTime ldt) {
         lastFeedingTime = ldt;
