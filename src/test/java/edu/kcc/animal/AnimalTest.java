@@ -46,7 +46,7 @@ public class AnimalTest {
     // TODO - Need testGetGender method (Whitney)
     
     // TODO - Need testGetName method (Chase)
-    
+   
     // TODO - Need testGetAge method (Fadwa)
     @Test
     public void testGetAge(){
@@ -55,6 +55,15 @@ public class AnimalTest {
         assertEquals(expected,result);
     }
     
+
+    // TODO - Need testGetFixed method
+    
+    // TODO - Need testGetId method
+    
+    // TODO - Need testGeLegs method
+    
+    // TODO - Need testGetWeight method
+
     // TODO - Need testGetFixed method (Ryan)
     @org.junit.Test
     public void testGetFixed(){
@@ -80,6 +89,7 @@ public class AnimalTest {
         BigDecimal result = animal.getWeight();
         assertEquals(expResult,result);
     }
+
     
     // TODO - Need testGetDateAdded method
     

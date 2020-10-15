@@ -79,7 +79,7 @@ public class Animal implements Comparable<Animal>{
         this.species = species;
     }
     
-    // TODO: Need speciesValidator method - Only allow cat and dog. Only allow it to change if it's "Unknown". (Nick)
+    // TODO: Need speciesValidator method - Only allow cat and dog. Only allow it to change if it's "Unknown". (William)
     
     public String getGender(){
         return gender;
@@ -89,12 +89,22 @@ public class Animal implements Comparable<Animal>{
         return age;
     }
     
+
+    // TODO: Need setAge method (Chantal)
+
     // TODO: Need setAge method (Jory)
     public void setAge(int animalAge){
         this.age = animalAge;
     }
+
     
     // TODO: Need ageValidator method - only allow ages 0 to 100 (Chase)
+    private void ageValidator(int age) {
+        if (age > 100 || age < 0) {
+            throw new IllegalArgumentException("Invalid Animal age.");
+        }
+        
+    }
     
     public boolean getFixed() {    
         return fixed;
@@ -132,15 +142,19 @@ public class Animal implements Comparable<Animal>{
     
     // TODO: Need weightValidator method - only allow weight 0.0 to 1000.0 (Jory)
     
+
+    // TODO: Need getDateAdded method (William)
+
     public LocalDate getdateAdded(){
         return dateAdded;
     }
+
     
     public void setDateAdded(LocalDate ldt){
         dateAdded = ldt;
     }
     
-    // TODO: Need dateValidator method - only allow dates up to a week in the past (Joseph)
+    // TODO: Need dateValidator method - only allow dates up to a week in the past (Ryan)
     
     // TODO: Need getLastFeedingTime method (Haley)
     
