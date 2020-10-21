@@ -87,7 +87,9 @@ public class AnimalTest {
     // TODO
     @Test
     public void testSetSpeciesCat() {
-        fail("The test case is a prototype.");
+        setUp();
+        animal.setSpecies("cat");
+        assertEquals("cat", animal.getSpecies());
     }
     
     // TODO
