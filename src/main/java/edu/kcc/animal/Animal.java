@@ -80,8 +80,19 @@ public class Animal implements Comparable<Animal>{
     }
     
     // TODO: Need speciesValidator method - Only allow cat and dog. Only allow it to change if it's "Unknown".
-    private void speciesValidator(String species) {
-        
+    private String speciesValidator(String speciesToSet){
+        String result = null;
+        if(this.species == "Unknown"){
+            switch(speciesToSet){
+                case "cat":
+                    result = "cat";
+                case "dog":
+                    result = "dog";
+                default:
+                    throw new IllegalArgumentException("Species may only be cat or dog.");
+            }
+        }
+        return result;
     }
     
     public String getGender(){
