@@ -20,7 +20,6 @@ public class Animal implements Comparable<Animal>{
     private LocalDate dateAdded;
     private LocalDateTime lastFeedingTime;
 
-    // TODO: Need full constructor (Ryan)
     public Animal(String Id, String Name, String Gender, int Age, boolean Fixed,
             int Legs, BigDecimal Weight, LocalDate DateAdded, 
             LocalDateTime LastFeedingTime){
@@ -34,7 +33,6 @@ public class Animal implements Comparable<Animal>{
         setDateAdded(DateAdded);
         setLastFeedingTime(LastFeedingTime);
     }
-    
     
     public Animal() {
         id = "0";
@@ -161,19 +159,16 @@ public class Animal implements Comparable<Animal>{
         
     }
 
-    // TODO: Need getDateAdded method (William)
-
     public LocalDate getdateAdded(){
         return dateAdded;
     }
 
-    
     public void setDateAdded(LocalDate ldt){
         dateValidator(dateAdded);
         dateAdded = ldt;
     }
     
-    // TODO: Need dateValidator method - only allow dates up to a week in the past
+    // TODO: Need dateValidator method - only allow dates up to a week in the past. Don't allow future dates.
     public void dateValidator(LocalDate dateAdded) {
         
     }
@@ -187,6 +182,7 @@ public class Animal implements Comparable<Animal>{
         lastFeedingTime = ldt;
     }
     
+    // TODO - Don't allow future dates.
     public void feedingValidator(LocalDateTime ldt){
         LocalDateTime twoDaysAgo = LocalDateTime.now().minusDays(2);
         if(ldt.isBefore(twoDaysAgo)){

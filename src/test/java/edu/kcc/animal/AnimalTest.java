@@ -43,30 +43,21 @@ public class AnimalTest {
     public void tearDown() {
     }
 
-    /**
-     * Test of getId method, of class Animal.
-     */
+    // TODO
     @Test
     public void testGetId() {
-        System.out.println("getId");
-        Animal instance = new Animal();
-        String expResult = "";
-        String result = instance.getId();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of setId method, of class Animal.
-     */
+    // TODO - Set the ID to something not already set
     @Test
     public void testSetId() {
-        System.out.println("setId");
-        String id = "";
-        Animal instance = new Animal();
-        instance.setId(id);
-        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+    
+    // TODO - Create a second Animal object with a unique id. Try to set the first animal's id equal to the second one
+    @Test
+    public void testSetIdBad() {
         fail("The test case is a prototype.");
     }
 
@@ -78,70 +69,63 @@ public class AnimalTest {
         assertEquals(expected, actual);
     }
 
-    /**
-     * Test of setName method, of class Animal.
-     */
+    // TODO
     @Test
     public void testSetName() {
-        System.out.println("setName");
-        String name = "";
-        Animal instance = new Animal();
-        instance.setName(name);
-        // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of getSpecies method, of class Animal.
-     */
+    // TODO
     @Test
     public void testGetSpecies() {
-        System.out.println("getSpecies");
-        Animal instance = new Animal();
-        String expResult = "";
-        String result = instance.getSpecies();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of setSpecies method, of class Animal.
-     */
+    // TODO
     @Test
-    public void testSetSpecies() {
-        System.out.println("setSpecies");
-        String species = "";
-        Animal instance = new Animal();
-        instance.setSpecies(species);
-        // TODO review the generated test code and remove the default call to fail.
+    public void testSetSpeciesCat() {
+        fail("The test case is a prototype.");
+    }
+    
+    // TODO
+    @Test
+    public void testSetSpeciesDog() {
+        fail("The test case is a prototype.");
+    }
+    
+    // TODO - Attempt to set a non Cat or Dog
+    @Test
+    public void testSetSpeciesBad() {
+        fail("The test case is a prototype.");
+    }
+    
+    // TODO - Attempt to set a cat to a dog
+    @Test
+    public void testSetSpeciesBadCatToDog() {
         fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of getGender method, of class Animal.
-     */
+    // TODO
     @Test
     public void testGetGender() {
-        System.out.println("getGender");
-        Animal instance = new Animal();
-        String expResult = "";
-        String result = instance.getGender();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of setGender method, of class Animal.
-     */
+    // TODO
     @Test
     public void testSetGender() {
-        System.out.println("setGender");
-        String gender = "";
-        Animal instance = new Animal();
-        instance.setGender(gender);
-        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+    
+    // TODO - Attempt to set non male or female
+    @Test
+    public void testSetGenderBad() {
+        fail("The test case is a prototype.");
+    }
+    
+     // TODO - Attempt to set a male to female
+    @Test
+    public void testSetGenderBadMaleToFemale() {
         fail("The test case is a prototype.");
     }
 
@@ -153,16 +137,21 @@ public class AnimalTest {
         assertEquals(expected,result);
     }
 
-    /**
-     * Test of setAge method, of class Animal.
-     */
+    // TODO
     @Test
     public void testSetAge() {
-        System.out.println("setAge");
-        int animalAge = 0;
-        Animal instance = new Animal();
-        instance.setAge(animalAge);
-        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+    
+    // TODO
+    @Test
+    public void testSetAgeNegativeBad() {
+        fail("The test case is a prototype.");
+    }
+    
+    // TODO
+    @Test
+    public void testSetAgeOver100Bad() {
         fail("The test case is a prototype.");
     }
 
@@ -174,16 +163,15 @@ public class AnimalTest {
         assertEquals(expected, actual);
     }
 
-    /**
-     * Test of setFixed method, of class Animal.
-     */
+    // TODO
     @Test
     public void testSetFixed() {
-        System.out.println("setFixed");
-        boolean fixed = false;
-        Animal instance = new Animal();
-        instance.setFixed(fixed);
-        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+    
+    // TODO - Attempt to set a fixed animal to not fixed
+    @Test
+    public void testSetFixedTruetoFalse() {
         fail("The test case is a prototype.");
     }
 
@@ -195,31 +183,24 @@ public class AnimalTest {
         assertEquals(expected, actual);
     }
 
-    /**
-     * Test of setLegs method, of class Animal.
-     */
+    // TODO
     @Test
     public void testSetLegs() {
-        System.out.println("setLegs");
-        int legs = 0;
-        Animal instance = new Animal();
-        instance.setLegs(legs);
-        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+    
+    // TODO
+    @Test
+    public void testSetLegsNegativeBad() {
+        fail("The test case is a prototype.");
+    }
+    
+    // TODO
+    @Test
+    public void testSetLegsGreaterThan4Bad() {
         fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of legsValidator method, of class Animal.
-     */
-    @Test
-    public void testLegsValidator() {
-        System.out.println("legsValidator");
-        int legs = 0;
-        Animal instance = new Animal();
-        instance.legsValidator(legs);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
 
     @Test
     public void testGetWeight() {
@@ -228,138 +209,84 @@ public class AnimalTest {
         assertEquals(expResult,result);
     }
 
-    /**
-     * Test of setWeight method, of class Animal.
-     */
+    // TODO
     @Test
     public void testSetWeight() {
-        System.out.println("setWeight");
-        BigDecimal lb = null;
-        Animal instance = new Animal();
-        instance.setWeight(lb);
-        // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
-
-    /**
-     * Test of weightValidator method, of class Animal.
-     */
+    
+    // TODO
     @Test
-    public void testWeightValidator() {
-        System.out.println("weightValidator");
-        BigDecimal weight = null;
-        Animal instance = new Animal();
-        instance.weightValidator(weight);
-        // TODO review the generated test code and remove the default call to fail.
+    public void testSetWeightNegativeBad() {
+        fail("The test case is a prototype.");
+    }
+    
+    // TODO
+    @Test
+    public void testSetWeightAbove1000Bad() {
         fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of getdateAdded method, of class Animal.
-     */
+
+    // TODO
     @Test
     public void testGetdateAdded() {
-        System.out.println("getdateAdded");
-        Animal instance = new Animal();
-        LocalDate expResult = null;
-        LocalDate result = instance.getdateAdded();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of setDateAdded method, of class Animal.
-     */
+    // TODO
     @Test
     public void testSetDateAdded() {
-        System.out.println("setDateAdded");
-        LocalDate ldt = null;
-        Animal instance = new Animal();
-        instance.setDateAdded(ldt);
-        // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
-
-    /**
-     * Test of dateValidator method, of class Animal.
-     */
+    
+    // TODO
     @Test
-    public void testDateValidator() {
-        System.out.println("dateValidator");
-        LocalDate dateAdded = null;
-        Animal instance = new Animal();
-        instance.dateValidator(dateAdded);
-        // TODO review the generated test code and remove the default call to fail.
+    public void testSetDateAddedMoreThanAWeekAgoBad() {
+        fail("The test case is a prototype.");
+    }
+    
+    // TODO
+    @Test
+    public void testSetDateAddedFutureDateBad() {
         fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of getLastFeedingTime method, of class Animal.
-     */
+
+    // TODO
     @Test
     public void testGetLastFeedingTime() {
-        System.out.println("getLastFeedingTime");
-        Animal instance = new Animal();
-        LocalDateTime expResult = null;
-        LocalDateTime result = instance.getLastFeedingTime();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of setLastFeedingTime method, of class Animal.
-     */
+    // TODO
     @Test
     public void testSetLastFeedingTime() {
-        System.out.println("setLastFeedingTime");
-        LocalDateTime ldt = null;
-        Animal instance = new Animal();
-        instance.setLastFeedingTime(ldt);
-        // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
-
-    /**
-     * Test of feedingValidator method, of class Animal.
-     */
+    
+    // TODO
     @Test
-    public void testFeedingValidator() {
-        System.out.println("feedingValidator");
-        LocalDateTime ldt = null;
-        Animal instance = new Animal();
-        instance.feedingValidator(ldt);
-        // TODO review the generated test code and remove the default call to fail.
+    public void testSetLastFeedingTimeMoreThan2DaysAgoBad() {
+        fail("The test case is a prototype.");
+    }
+    
+    // TODO
+    @Test
+    public void testSetLastFeedingTimeFutureDateBad() {
         fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of toString method, of class Animal.
-     */
+
+    // TODO
     @Test
     public void testToString() {
-        System.out.println("toString");
-        Animal instance = new Animal();
-        String expResult = "";
-        String result = instance.toString();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of compareTo method, of class Animal.
-     */
+    // TODO
     @Test
     public void testCompareTo() {
-        System.out.println("compareTo");
-        Animal other = null;
-        Animal instance = new Animal();
-        int expResult = 0;
-        int result = instance.compareTo(other);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
     
