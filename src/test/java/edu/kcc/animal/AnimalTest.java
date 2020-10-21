@@ -5,6 +5,7 @@
  */
 package edu.kcc.animal;
 
+import static com.gargoylesoftware.htmlunit.html.InputElementFactory.instance;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -14,6 +15,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  *
@@ -22,6 +24,7 @@ import static org.junit.Assert.*;
 public class AnimalTest {
     
     private Animal animal;
+    private Animal instance;
     
     public AnimalTest() {
     }
@@ -166,7 +169,11 @@ public class AnimalTest {
     // TODO
     @Test
     public void testSetFixed() {
-        fail("The test case is a prototype.");
+        System.out.println("setFixed");
+        boolean fixed = false;
+        Animal instance = new Animal();
+        instance.setFixed(fixed);
+        assertEquals(fixed, instance.getFixed());
     }
     
     // TODO - Attempt to set a fixed animal to not fixed
