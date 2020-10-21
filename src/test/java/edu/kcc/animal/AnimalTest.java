@@ -268,7 +268,13 @@ public class AnimalTest {
     // TODO
     @Test
     public void testSetLastFeedingTimeMoreThan2DaysAgoBad() {
-        fail("The test case is a prototype.");
+        LocalDateTime ldtThreeDays = LocalDateTime.now().minusDays(3);
+        Animal instance = new Animal();
+        try {
+            instance.setLastFeedingTime(ldtThreeDays);
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
     }
     
     // TODO
