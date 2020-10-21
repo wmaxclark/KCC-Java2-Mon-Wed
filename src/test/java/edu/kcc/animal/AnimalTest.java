@@ -78,7 +78,10 @@ public class AnimalTest {
     // TODO
     @Test
     public void testGetSpecies() {
-        fail("The test case is a prototype.");
+        setUp();
+        String expected = "Unknown";
+        String actual = animal.getSpecies();
+        assertEquals(expected, actual);
     }
 
     // TODO
