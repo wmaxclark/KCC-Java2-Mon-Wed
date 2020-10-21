@@ -50,18 +50,20 @@ public class Animal implements Comparable<Animal>{
         lastFeedingTime = LocalDateTime.of(2020, 10, 1, 23, 59); // October 1, 2020 at 11:59pm
     }
     
-    // TODO: Need getId method (Vinayak)
-    
     public String getId(){
         return id;
     }
 
-    // TODO: Need setId method (Melissa)
     public void setId(String id) {
+        idValidator(id);
         this.id = id;
     }
     
-    // TODO: Need idValidator method - Only allow it to change if it's "0". Do not allow an id to be set if the id is already in the idList (Jory)
+    // TODO: Need idValidator method - Only allow it to change if it's "0". Do not allow an id to be set if the id is already in the idList
+    private void idValidator(String id) {
+        
+    }
+    
     public String getName() {
         return name;
     }
@@ -74,31 +76,39 @@ public class Animal implements Comparable<Animal>{
         return species;
     }
     
-    // TODO: Need setSpecies method (Haley)
     public void setSpecies(String species){
+        speciesValidator(species);
         this.species = species;
     }
     
-    // TODO: Need speciesValidator method - Only allow cat and dog. Only allow it to change if it's "Unknown". (William)
+    // TODO: Need speciesValidator method - Only allow cat and dog. Only allow it to change if it's "Unknown".
+    private void speciesValidator(String species) {
+        
+    }
     
     public String getGender(){
         return gender;
+    }
+    
+    public void setGender(String gender) {
+        genderValidator(gender);
+        this.gender = gender;
+    }
+    
+    // TODO: Need genderValidator method - Only allow male and female. Only allow it to change if it's "Unknown".
+    private void genderValidator(String gender) {
+        
     }
     
     public int getAge(){
         return age;
     }
     
-
-    // TODO: Need setAge method (Chantal)
-
-    // TODO: Need setAge method (Jory)
     public void setAge(int animalAge){
+        ageValidator(age);
         this.age = animalAge;
     }
 
-    
-    // TODO: Need ageValidator method - only allow ages 0 to 100 (Chase)
     private void ageValidator(int age) {
         if (age > 100 || age < 0) {
             throw new IllegalArgumentException("Invalid Animal age.");
@@ -111,18 +121,24 @@ public class Animal implements Comparable<Animal>{
     }
 
     public void setFixed(boolean fixed) {
+        fixedValidator(fixed);
         this.fixed = fixed;
     }
     
-    // TODO: Need fixedValidator method - don't allow an animal that is already fixed to be fixed again (Whitney)
+    // TODO: Need fixedValidator method - don't allow an animal that is already fixed to be fixed again 
+    private void fixedValidator(boolean fixed) {
+        
+    }
     
     public int getLegs(){
         return legs;
     }
     
-    // TODO: Need setLegs method (Becky)
+    public void setLegs(int legs) {
+        legsValidator(legs);
+        this.legs = legs;
+    }
     
-    // TODO: Need legsValidator method - only allow legs 0 to 4 (Fadwa)
     public void legsValidator(int legs)
     {
         if (legs>4 || legs<0)
@@ -131,17 +147,19 @@ public class Animal implements Comparable<Animal>{
         }
     }
     
-
     public BigDecimal getWeight() {
         return weight;
     }
     
     public void  setWeight(BigDecimal lb){
+        weightValidator(weight);
         this.weight = lb;
     }
     
-    // TODO: Need weightValidator method - only allow weight 0.0 to 1000.0 (Jory)
-    
+    // TODO: Need weightValidator method - only allow weight 0.0 to 1000.0 
+    public void weightValidator(BigDecimal weight) {
+        
+    }
 
     // TODO: Need getDateAdded method (William)
 
@@ -151,23 +169,24 @@ public class Animal implements Comparable<Animal>{
 
     
     public void setDateAdded(LocalDate ldt){
+        dateValidator(dateAdded);
         dateAdded = ldt;
     }
     
-    // TODO: Need dateValidator method - only allow dates up to a week in the past (Ryan)
-    
-    // TODO: Need getLastFeedingTime method (Haley)
+    // TODO: Need dateValidator method - only allow dates up to a week in the past
+    public void dateValidator(LocalDate dateAdded) {
+        
+    }
     
     public LocalDateTime getLastFeedingTime(){
         return lastFeedingTime;
     }
 
-    
     public void setLastFeedingTime(LocalDateTime ldt) {
+        feedingValidator(ldt);
         lastFeedingTime = ldt;
     }
     
-    // TODO: Need feedingValidator method - only allow day/times up to two days in the past (Vinayak)
     public void feedingValidator(LocalDateTime ldt){
         LocalDateTime twoDaysAgo = LocalDateTime.now().minusDays(2);
         if(ldt.isBefore(twoDaysAgo)){
@@ -176,15 +195,12 @@ public class Animal implements Comparable<Animal>{
         }
     }
 
-    
-    // TODO: Need toString method - include name, species, gender, age, and weight (Melissa)
     @Override
     public String toString() {
         return "Animal {name: " + name + ", species: " + species + ", gender: "
                 + gender + ", age: " + age + ", weight: " + weight + "}";
     }
     
-    // TODO: Need compareTo method - Compare by their species first, then by their name (Chantal)
     @Override
     public int compareTo(Animal other) {
         if (this.species.compareTo(other.species) != 0) {
