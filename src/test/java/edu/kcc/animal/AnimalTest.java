@@ -140,7 +140,8 @@ public class AnimalTest {
     // TODO
     @Test
     public void testSetAge() {
-        fail("The test case is a prototype.");
+        animal.setAge(3);
+        assertEquals(3,animal.getAge());
     }
     
     // TODO
