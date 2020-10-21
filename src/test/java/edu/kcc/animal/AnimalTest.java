@@ -114,7 +114,13 @@ public class AnimalTest {
     // TODO - Attempt to set a cat to a dog
     @Test
     public void testSetSpeciesBadCatToDog() {
-        fail("The test case is a prototype.");
+        try{
+            animal.setSpecies("cat");
+            animal.setSpecies("dog");
+            fail("Species cannot be switched once set");
+        } catch(IllegalArgumentException ex) {
+            assertTrue(true);
+        }
     }
 
     // TODO
