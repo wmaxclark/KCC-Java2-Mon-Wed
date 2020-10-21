@@ -14,6 +14,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  *
@@ -146,7 +147,9 @@ public class AnimalTest {
     // TODO
     @Test
     public void testSetAgeNegativeBad() {
-        fail("The test case is a prototype.");
+        assertThrows(IllegalArgumentException.class,
+                () -> animal.setAge(-5),
+                "Invalid Animal age.");
     }
     
     // TODO
