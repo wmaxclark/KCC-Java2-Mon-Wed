@@ -103,7 +103,12 @@ public class AnimalTest {
     // TODO - Attempt to set a non Cat or Dog
     @Test
     public void testSetSpeciesBad() {
-        fail("The test case is a prototype.");
+        try{
+            animal.setSpecies("dolphin");
+            fail("Species cannot be set to dolphin");
+        } catch(IllegalArgumentException ex) {
+            assertTrue(true);
+        }
     }
     
     // TODO - Attempt to set a cat to a dog
