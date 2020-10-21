@@ -20,18 +20,18 @@ public class Animal implements Comparable<Animal>{
     private LocalDate dateAdded;
     private LocalDateTime lastFeedingTime;
 
-    public Animal(String Id, String Name, String Gender, int Age, boolean Fixed,
-            int Legs, BigDecimal Weight, LocalDate DateAdded, 
-            LocalDateTime LastFeedingTime){
-        setId(Id);
-        setName(Name);
-        setGender(Gender);
-        setAge(Age);
-        setFixed(Fixed);
-        setLegs(Legs);
-        setWeight(Weight);
-        setDateAdded(DateAdded);
-        setLastFeedingTime(LastFeedingTime);
+    public Animal(String id, String name, String gender, int age, boolean fixed,
+            int legs, BigDecimal weight, LocalDate dateAdded, 
+            LocalDateTime lastFeedingTime){
+        setId(id);
+        setName(name);
+        setGender(gender);
+        setAge(age);
+        setFixed(fixed);
+        setLegs(legs);
+        setWeight(weight);
+        setDateAdded(dateAdded);
+        setLastFeedingTime(lastFeedingTime);
     }
     
     public Animal() {
@@ -170,7 +170,15 @@ public class Animal implements Comparable<Animal>{
     
     // TODO: Need dateValidator method - only allow dates up to a week in the past. Don't allow future dates.
     public void dateValidator(LocalDate dateAdded) {
-        
+        LocalDate oneWeekAgo = LocalDate.now().minusDays(7);
+        if(dateAdded.isBefore(oneWeekAgo)){
+            throw new IllegalArgumentException(dateAdded + " is more than"
+                    + " one week in the past");
+        }
+        else if( dateAdded.isAfter(LocalDate.now())){
+            throw new IllegalArgumentException(dateAdded + " is a date in the "
+                    + "future");
+        }
     }
     
     public LocalDateTime getLastFeedingTime(){
