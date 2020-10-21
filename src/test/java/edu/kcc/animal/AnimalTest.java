@@ -129,13 +129,41 @@ public class AnimalTest {
     // TODO - Attempt to set non male or female
     @Test
     public void testSetGenderBad() {
-        fail("The test case is a prototype.");
+        setUp();
+        String gender = "vegetable";
+        try{
+            switch(gender){
+                case "female":
+                case "Female":
+                    gender = "female";
+                    break;
+                case "male":
+                case "Male":
+                    gender = "male";
+                    break;
+                default:
+            }
+        }
+        catch (IllegalArgumentException iae){
+            throw iae;
+        }
     }
     
      // TODO - Attempt to set a male to female
     @Test
     public void testSetGenderBadMaleToFemale() {
-        fail("The test case is a prototype.");
+        setUp();
+        
+        try{
+            if(animal.getGender() != ""){
+                animal.setGender("");
+            }
+        }
+        catch (IllegalArgumentException iae){
+            throw iae;
+        }
+        
+        
     }
 
     @Test
