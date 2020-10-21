@@ -280,7 +280,13 @@ public class AnimalTest {
     // TODO
     @Test
     public void testSetLastFeedingTimeFutureDateBad() {
-        fail("The test case is a prototype.");
+        LocalDateTime ldtFutureDate = LocalDateTime.now().plusDays(1);
+        Animal instance = new Animal();
+        try {
+        instance.setLastFeedingTime(ldtFutureDate);
+        } catch(Exception ex) {
+            System.out.println(ex);
+        }
     }
 
 
