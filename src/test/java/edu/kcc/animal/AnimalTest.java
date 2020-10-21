@@ -194,7 +194,8 @@ public class AnimalTest {
     // TODO
     @Test
     public void testSetLegs() {
-        fail("The test case is a prototype.");
+        animal.setLegs(4);
+        assertEquals(4,animal.getLegs());
     }
     
     // TODO
