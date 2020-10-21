@@ -156,7 +156,12 @@ public class Animal implements Comparable<Animal>{
     
     // TODO: Need weightValidator method - only allow weight 0.0 to 1000.0 
     public void weightValidator(BigDecimal weight) {
-        
+        BigDecimal max = new BigDecimal("1000.0");
+        BigDecimal min = new BigDecimal("0.0");
+        if (weight.compareTo(max) == 1 || weight.compareTo(min) == -1) {
+            throw new IllegalArgumentException("Invalid weight. Acceptable "
+                    + "weight ranges include 0.0-1000.0.");
+        }
     }
 
     public LocalDate getdateAdded(){
