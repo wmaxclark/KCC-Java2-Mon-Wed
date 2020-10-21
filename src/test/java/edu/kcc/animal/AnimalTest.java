@@ -8,6 +8,8 @@ package edu.kcc.animal;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.Month;
+import java.util.HashSet;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -230,26 +232,44 @@ public class AnimalTest {
 
     // TODO
     @Test
-    public void testGetdateAdded() {
-        fail("The test case is a prototype.");
+    public void testGetDateAdded() {
+        LocalDate expResult = LocalDate.of(2020, 9, 1); // The default date
+        LocalDate result = animal.getDateAdded();
+        assertEquals(expResult.toString(), result.toString());
     }
 
     // TODO
     @Test
     public void testSetDateAdded() {
-        fail("The test case is a prototype.");
+        LocalDate goodDate = LocalDate.now();
+        animal.setDateAdded(goodDate);
+        assertEquals(goodDate.toString(), animal.getDateAdded().toString());
     }
     
     // TODO
     @Test
     public void testSetDateAddedMoreThanAWeekAgoBad() {
-        fail("The test case is a prototype.");
+        LocalDate badDate = LocalDate.of(2020, 10, 13);
+        try{
+            animal.setDateAdded(badDate);
+            fail("The date added may not be longer than a week in the past.");           
+        }
+        catch(IllegalArguementException iae){
+            //
+        }
     }
     
     // TODO
     @Test
     public void testSetDateAddedFutureDateBad() {
-        fail("The test case is a prototype.");
+        LocalDate badDate = LocalDate.of(2029, 29, 29);
+        try{
+            animal.setDateAdded(badDate);
+            fail("The date added may not be longer than a week in the past.");           
+        }
+        catch(IllegalArguementException iae){
+            //
+        }
     }
 
 

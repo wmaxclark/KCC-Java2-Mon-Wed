@@ -170,7 +170,7 @@ public class Animal implements Comparable<Animal>{
         
     }
 
-    public LocalDate getdateAdded(){
+    public LocalDate getDateAdded(){
         return dateAdded;
     }
 
