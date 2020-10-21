@@ -291,7 +291,12 @@ public class AnimalTest {
     // TODO
     @Test
     public void testCompareTo() {
-        fail("The test case is a prototype.");
+        setUp();
+        Animal other = null;
+        Animal animal = null;
+        int expResult = 0;
+        int result = animal.compareTo(other);
+        assertEquals(expResult, result);
     }
     
 }
