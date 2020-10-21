@@ -14,6 +14,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  *
@@ -22,6 +23,7 @@ import static org.junit.Assert.*;
 public class AnimalTest {
     
     private Animal animal;
+    private static final String GOOD_NAME = "Snowball";
     
     public AnimalTest() {
     }
@@ -72,7 +74,9 @@ public class AnimalTest {
     // TODO
     @Test
     public void testSetName() {
-        fail("The test case is a prototype.");
+       setUp();
+       animal.setName(GOOD_NAME);
+       assertEquals(GOOD_NAME, animal.getName());
     }
 
     // TODO
