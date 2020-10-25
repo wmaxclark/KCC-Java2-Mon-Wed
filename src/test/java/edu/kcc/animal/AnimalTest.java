@@ -24,7 +24,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class AnimalTest {
     
     private Animal animal;
-    private Animal instance;
     
     public AnimalTest() {
     }
@@ -170,10 +169,10 @@ public class AnimalTest {
     @Test
     public void testSetFixed() {
         System.out.println("setFixed");
-        boolean fixed = false;
-        Animal instance = new Animal();
-        instance.setFixed(fixed);
-        assertEquals(fixed, instance.getFixed());
+        boolean fixed = true;
+        Animal animal = new Animal();
+        animal.setFixed(fixed);
+        assertEquals(fixed, animal.getFixed());
     }
     
     // TODO - Attempt to set a fixed animal to not fixed
