@@ -249,26 +249,28 @@ public class AnimalTest {
     // TODO
     @Test
     public void testSetDateAddedMoreThanAWeekAgoBad() {
-        LocalDate badDate = LocalDate.of(2020, 10, 13);
+        LocalDate badDate = LocalDate.now().minusWeeks(1));
+        LocalDate original = animal.getDateAdded();
         try{
             animal.setDateAdded(badDate);
             fail("The date added may not be longer than a week in the past.");           
         }
         catch(IllegalArguementException iae){
-            //
+            assertEquals(original, animal.getDateAdded());
         }
     }
     
     // TODO
     @Test
     public void testSetDateAddedFutureDateBad() {
-        LocalDate badDate = LocalDate.of(2029, 29, 29);
+        LocalDate badDate = LocalDate.now().plusDays(1);
+        LocalDate original = animal.getDateAdded();
         try{
             animal.setDateAdded(badDate);
             fail("The date added may not be longer than a week in the past.");           
         }
         catch(IllegalArguementException iae){
-            //
+            assertEquals(original, animal.getDateAdded());
         }
     }
 

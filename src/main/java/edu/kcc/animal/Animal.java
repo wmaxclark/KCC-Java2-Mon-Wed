@@ -92,6 +92,19 @@ public class Animal implements Comparable<Animal>{
                     throw new IllegalArgumentException("Species may only be cat or dog.");
             }
         }
+        else if(this.species == "cat"){
+            if(speciesToSet != this.species){
+                throw new IllegalArgumentException("Animal is already a cat.");
+            }
+        }
+        else if(this.species == "dog"){
+            if(speciesToSet != this.species){
+                throw new IllegalArgumentException("Animal is already a dog.");
+            }
+        }
+        else{
+            throw new IllegalArgumentException("Animals species cannot be changed.");
+        }
         return result;
     }
     
