@@ -233,29 +233,48 @@ public class AnimalTest {
         fail("The test case is a prototype.");
     }
 
-
-    // TODO
+    
     @Test
-    public void testGetdateAdded() {
-        fail("The test case is a prototype.");
+    public void testGetDateAdded() {
+        LocalDate expResult = LocalDate.of(2020, 9, 1); // The default date
+        LocalDate result = animal.getDateAdded();
+        assertEquals(expResult.toString(), result.toString());
     }
 
     // TODO
     @Test
     public void testSetDateAdded() {
-        fail("The test case is a prototype.");
+        LocalDate goodDate = LocalDate.now();
+        animal.setDateAdded(goodDate);
+        assertEquals(goodDate.toString(), animal.getDateAdded().toString());
     }
     
     // TODO
     @Test
     public void testSetDateAddedMoreThanAWeekAgoBad() {
-        fail("The test case is a prototype.");
+        LocalDate badDate = LocalDate.now().minusWeeks(1));
+        LocalDate original = animal.getDateAdded();
+        try{
+            animal.setDateAdded(badDate);
+            fail("The date added may not be longer than a week in the past.");           
+        }
+        catch(IllegalArguementException iae){
+            assertEquals(original, animal.getDateAdded());
+        }
     }
     
     // TODO
     @Test
     public void testSetDateAddedFutureDateBad() {
-        fail("The test case is a prototype.");
+        LocalDate badDate = LocalDate.now().plusDays(1);
+        LocalDate original = animal.getDateAdded();
+        try{
+            animal.setDateAdded(badDate);
+            fail("The date added may not be longer than a week in the past.");           
+        }
+        catch(IllegalArguementException iae){
+            assertEquals(original, animal.getDateAdded());
+        }
     }
 
 
