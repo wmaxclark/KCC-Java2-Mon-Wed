@@ -59,7 +59,11 @@ public class Animal implements Comparable<Animal>{
     
     // TODO: Need idValidator method - Only allow it to change if it's "0". Do not allow an id to be set if the id is already in the idList
     private void idValidator(String id) {
-     
+        if(idList.contains(id)){
+            throw new IllegalArgumentException("Id is already ");
+        }else if (id == "0"){
+            setId(id);
+        }
     }
     
     public String getName() {
