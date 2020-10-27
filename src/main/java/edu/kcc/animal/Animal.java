@@ -125,7 +125,7 @@ public class Animal implements Comparable<Animal>{
     
     // TODO: Need fixedValidator method - don't allow an animal that is already fixed to be fixed again 
     private void fixedValidator(boolean fixed) {
-        if((this.fixed == true && fixed == false) || (this.fixed == true && fixed == true)){
+      if((this.fixed == true && fixed == false) || (this.fixed == true && fixed == true)){
             throw new IllegalArgumentException("Animal is already fixed.");
         }
     }
