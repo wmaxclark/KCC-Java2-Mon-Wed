@@ -48,7 +48,10 @@ public class AnimalTest {
     // TODO
     @Test
     public void testGetId() {
-        fail("The test case is a prototype.");
+        setUp();
+        String expected = "0";
+        String actual = animal.getId();
+        assertEquals(expected, actual);
     }
 
     // TODO - Set the ID to something not already set
