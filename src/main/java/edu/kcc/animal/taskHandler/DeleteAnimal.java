@@ -8,7 +8,7 @@ package edu.kcc.animal.taskHandler;
 import edu.kcc.animal.Animal;
 import edu.kcc.animal.data.AnimalDAO;
 import edu.kcc.animal.data.AnimalDataExeption;
-import edu.kcc.animal.data.AnimalHandler;
+import edu.kcc.animal.data.AnimalDataHandler;
 import edu.kcc.animal.ui.UIUtility;
 import java.util.List;
 
