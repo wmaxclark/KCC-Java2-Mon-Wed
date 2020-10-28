@@ -276,11 +276,10 @@ public class AnimalTest {
     public void testSetLastFeedingTimeMoreThan2DaysAgoBad() {
         LocalDateTime ldtThreeDays = LocalDateTime.now().minusDays(3);
         Animal instance = new Animal();
-        try {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
             instance.setLastFeedingTime(ldtThreeDays);
-        } catch (Exception ex) {
-            System.out.println(ex);
-        }
+        });
+
     }
     
     // TODO
