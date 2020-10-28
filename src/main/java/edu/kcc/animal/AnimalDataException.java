@@ -14,7 +14,6 @@ public class AnimalDataException extends Exception{
     public AnimalDataException() {
     }
 
-
     public AnimalDataException(String msg) {
         super(msg);
     }
@@ -31,5 +30,4 @@ public class AnimalDataException extends Exception{
             , boolean enableSuppression, boolean writableStackTrace) {
         super(msg, cause, enableSuppression, writableStackTrace);
     }
-
 }
