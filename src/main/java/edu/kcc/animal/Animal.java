@@ -203,6 +203,8 @@ public class Animal implements Comparable<Animal>{
         if(ldt.isBefore(twoDaysAgo)){
             throw new IllegalArgumentException(ldt + " is more than"
                     + " two days in the past");
+        } else if (LocalDateTime.now().isBefore(ldt)){
+            throw new IllegalArgumentException(ldt + " is in the future.");
         }
     }
 

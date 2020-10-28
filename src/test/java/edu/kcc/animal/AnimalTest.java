@@ -274,13 +274,23 @@ public class AnimalTest {
     // TODO
     @Test
     public void testSetLastFeedingTimeMoreThan2DaysAgoBad() {
-        fail("The test case is a prototype.");
+        LocalDateTime ldtThreeDays = LocalDateTime.now().minusDays(3);
+        Animal instance = new Animal();
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            instance.setLastFeedingTime(ldtThreeDays);
+        });
+
     }
     
     // TODO
     @Test
     public void testSetLastFeedingTimeFutureDateBad() {
-        fail("The test case is a prototype.");
+        LocalDateTime ldtFutureDate = LocalDateTime.now().plusDays(1);
+        Animal instance = new Animal();
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            instance.setLastFeedingTime(ldtFutureDate);
+                });
+        
     }
 
 
