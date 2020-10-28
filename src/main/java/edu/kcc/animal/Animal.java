@@ -155,7 +155,9 @@ public class Animal implements Comparable<Animal>{
     
     // TODO: Need fixedValidator method - don't allow an animal that is already fixed to be fixed again 
     private void fixedValidator(boolean fixed) {
-        
+      if((this.fixed == true && fixed == false) || (this.fixed == true && fixed == true)){
+            throw new IllegalArgumentException("Animal is already fixed.");
+        }
     }
     
     public int getLegs(){
@@ -231,6 +233,8 @@ public class Animal implements Comparable<Animal>{
         if(ldt.isBefore(twoDaysAgo)){
             throw new IllegalArgumentException(ldt + " is more than"
                     + " two days in the past");
+        } else if (LocalDateTime.now().isBefore(ldt)){
+            throw new IllegalArgumentException(ldt + " is in the future.");
         }
     }
 
