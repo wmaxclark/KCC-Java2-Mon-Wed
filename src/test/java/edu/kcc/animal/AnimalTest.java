@@ -24,7 +24,6 @@ import static org.junit.jupiter.api.Assertions.fail;
 public class AnimalTest {
     
     private Animal animal;
-    private final String GOOD_GENDER = "female";
     
     public AnimalTest() {
     }
@@ -121,7 +120,7 @@ public class AnimalTest {
     @Test
     public void testSetGender() {
         setUp();
-        String gender = GOOD_GENDER;
+        String gender = "Unknown";
         animal.setGender(gender);
         assertEquals(gender, animal.getGender());
     }
@@ -131,10 +130,10 @@ public class AnimalTest {
     public void testSetGenderBad() {
         setUp();
         String gender = "vegetable";
-        String original = GOOD_GENDER;
+        String original = animal.getGender();
         try{
             animal.setGender(gender);
-            }
+        }
         catch (IllegalArgumentException iae){
             assertEquals(original, animal.getGender());
         }
@@ -144,19 +143,15 @@ public class AnimalTest {
     @Test
     public void testSetGenderBadMaleToFemale() {
         setUp();
-        String originalEntry = "male";
-        animal.setGender(originalEntry);
+        animal.setGender("male");
+        String original = animal.getGender();
+                
         try{
-            animal.setGender(GOOD_GENDER);
-            if(animal.getGender() == originalEntry){
-                // happy dance
-            }
+            animal.setGender("female");
         }
         catch (IllegalArgumentException iae){
-            assertEquals(originalEntry, animal.getGender());
+            assertEquals(original, animal.getGender());
         }
-        
-        
     }
 
     @Test

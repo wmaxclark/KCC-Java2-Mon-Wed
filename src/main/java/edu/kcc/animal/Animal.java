@@ -95,7 +95,22 @@ public class Animal implements Comparable<Animal>{
     
     // TODO: Need genderValidator method - Only allow male and female. Only allow it to change if it's "Unknown".
     private void genderValidator(String gender) {
-        
+        Animal animal = new Animal();
+        if(animal.getGender().compareTo("Unknown") == 0){
+            if(gender.compareTo("female") == 0){
+                    this.gender = gender;
+            }
+            else if(gender.compareTo("male") == 0){
+                    this.gender = gender;
+            }
+            else{
+                System.out.println("Please enter 'male' or 'female' for "
+                                        + "gender.");
+            }
+        }
+        else{
+            System.out.println("Gender has already been entered.");
+        }
     }
     
     public int getAge(){
