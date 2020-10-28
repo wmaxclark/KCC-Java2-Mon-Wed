@@ -9,6 +9,7 @@ package edu.kcc.animal;
  *
  * @author Haley
  */
+
 public class AnimalDataException extends Exception{
     
     public AnimalDataException() {
