@@ -16,7 +16,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  *
@@ -155,13 +156,16 @@ public class AnimalTest {
     // TODO
     @Test
     public void testSetAge() {
-        fail("The test case is a prototype.");
+        animal.setAge(3);
+        assertEquals(3,animal.getAge());
     }
 
     // TODO
     @Test
     public void testSetAgeNegativeBad() {
-        fail("The test case is a prototype.");
+        assertThrows(IllegalArgumentException.class,
+                () -> animal.setAge(-5),
+                "Invalid Animal age.");
     }
 
     // TODO
@@ -201,7 +205,8 @@ public class AnimalTest {
     // TODO
     @Test
     public void testSetLegs() {
-        fail("The test case is a prototype.");
+        animal.setLegs(4);
+        assertEquals(4,animal.getLegs());
     }
 
     // TODO
@@ -280,13 +285,23 @@ public class AnimalTest {
     // TODO
     @Test
     public void testSetLastFeedingTimeMoreThan2DaysAgoBad() {
-        fail("The test case is a prototype.");
+        LocalDateTime ldtThreeDays = LocalDateTime.now().minusDays(3);
+        Animal instance = new Animal();
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            instance.setLastFeedingTime(ldtThreeDays);
+        });
+
     }
 
     // TODO
     @Test
     public void testSetLastFeedingTimeFutureDateBad() {
-        fail("The test case is a prototype.");
+        LocalDateTime ldtFutureDate = LocalDateTime.now().plusDays(1);
+        Animal instance = new Animal();
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            instance.setLastFeedingTime(ldtFutureDate);
+                });
+        
     }
 
     // TODO
