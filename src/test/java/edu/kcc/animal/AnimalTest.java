@@ -262,7 +262,7 @@ public class AnimalTest {
         LocalDate original = animal.getDateAdded();
         try{
             animal.setDateAdded(badDate);
-            fail("The date added may not be longer than a week in the past.");           
+            fail("The date added may not be in the future.");           
         }
         catch(IllegalArguementException iae){
             assertEquals(original, animal.getDateAdded());
