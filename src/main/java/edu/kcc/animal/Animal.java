@@ -87,8 +87,8 @@ public class Animal implements Comparable<Animal>{
         
         String lcase = species.toLowerCase();
         
-        if(lcase != "cat" && lcase != "dog" && lcase != "unknown") {
-            throw new IllegalArgumentException("Species can only be set to dog, cat, or Unknown.");
+        if(lcase != "cat" && lcase != "dog") {
+            throw new IllegalArgumentException("Species can only be set to dog or cat.");
         }
     }
     
