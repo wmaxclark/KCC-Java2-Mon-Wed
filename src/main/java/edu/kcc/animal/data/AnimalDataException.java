@@ -3,13 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.kcc.animal;
-
+package edu.kcc.animal.data;
 /**
  *
- * @author Haley
+ * @author Haley Hepker
  */
-
 public class AnimalDataException extends Exception{
     
     public AnimalDataException() {
