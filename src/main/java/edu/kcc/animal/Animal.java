@@ -81,7 +81,22 @@ public class Animal implements Comparable<Animal>{
     
     // TODO: Need speciesValidator method - Only allow cat and dog. Only allow it to change if it's "Unknown".
     private void speciesValidator(String species) {
-        
+        Animal animal = new Animal();
+        if(animal.getSpecies().compareTo("Unknown") == 0){
+            if(gender.compareTo("cat") == 0){
+                    this.species = species;
+            }
+            else if(gender.compareTo("dog") == 0){
+                    this.species = species;
+            }
+            else{
+                System.out.println("Please enter 'cat' or 'dog' for "
+                                        + "species.");
+            }
+        }
+        else{
+            System.out.println("Species has already been entered.");
+        }
     }
     
     public String getGender(){
