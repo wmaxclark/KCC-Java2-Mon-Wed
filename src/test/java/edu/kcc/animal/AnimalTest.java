@@ -288,11 +288,10 @@ public class AnimalTest {
     public void testSetLastFeedingTimeFutureDateBad() {
         LocalDateTime ldtFutureDate = LocalDateTime.now().plusDays(1);
         Animal instance = new Animal();
-        try {
-        instance.setLastFeedingTime(ldtFutureDate);
-        } catch(Exception ex) {
-            System.out.println(ex);
-        }
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            instance.setLastFeedingTime(ldtFutureDate);
+                });
+        
     }
 
 
