@@ -59,7 +59,12 @@ public class Animal implements Comparable<Animal>{
     
     // TODO: Need idValidator method - Only allow it to change if it's "0". Do not allow an id to be set if the id is already in the idList
     private void idValidator(String id) {
-        
+        if(! id.equals("0")){
+            throw new IllegalArgumentException("You can't change an id that has already been set.");
+        }
+        if (idList.contains(id)){
+            throw new IllegalArgumentException("Id already in idList.");
+        }
     }
     
     public String getName() {
@@ -80,22 +85,12 @@ public class Animal implements Comparable<Animal>{
     }
   
     private void speciesValidator(String species) {
-        Animal animal = new Animal();
-        if(animal.getSpecies().compareTo("Unknown") == 0){
-            if(gender.compareTo("cat") == 0){
-                    this.species = species;
-            }
-            else if(gender.compareTo("dog") == 0){
-                    this.species = species;
-            }
-            else{
-                System.out.println("Please enter 'cat' or 'dog' for "
-                                        + "species.");
-            }
+        if(! species"Unknown")){
+            throw new IllegalArgumentException("The species cannot be changed.");
         }
-        else{
-            System.out.println("Species has already been entered.");
-        }
+        if(!species.equals("cat") || !species.equals("dog") ){
+            throw new IllegalArgumentException("The species of must be either cat or dog");
+        } 
     }
     
     public String getGender(){
