@@ -78,16 +78,23 @@ public class Animal implements Comparable<Animal>{
         speciesValidator(species);
         this.species = species;
     }
-    
-    private void speciesValidator(String species) {        
-        if(this.species != "Unknown") {
-            throw new IllegalArgumentException("Species can only be changed if it's set to Unknown.");
+  
+    private void speciesValidator(String species) {
+        Animal animal = new Animal();
+        if(animal.getSpecies().compareTo("Unknown") == 0){
+            if(gender.compareTo("cat") == 0){
+                    this.species = species;
+            }
+            else if(gender.compareTo("dog") == 0){
+                    this.species = species;
+            }
+            else{
+                System.out.println("Please enter 'cat' or 'dog' for "
+                                        + "species.");
+            }
         }
-        
-        String lcase = species.toLowerCase();
-        
-        if(lcase != "cat" && lcase != "dog") {
-            throw new IllegalArgumentException("Species can only be set to dog or cat.");
+        else{
+            System.out.println("Species has already been entered.");
         }
     }
     
@@ -102,7 +109,22 @@ public class Animal implements Comparable<Animal>{
     
     // TODO: Need genderValidator method - Only allow male and female. Only allow it to change if it's "Unknown".
     private void genderValidator(String gender) {
-        
+        Animal animal = new Animal();
+        if(animal.getGender().compareTo("Unknown") == 0){
+            if(gender.compareTo("female") == 0){
+                    this.gender = gender;
+            }
+            else if(gender.compareTo("male") == 0){
+                    this.gender = gender;
+            }
+            else{
+                System.out.println("Please enter 'male' or 'female' for "
+                                        + "gender.");
+            }
+        }
+        else{
+            System.out.println("Gender has already been entered.");
+        }
     }
     
     public int getAge(){

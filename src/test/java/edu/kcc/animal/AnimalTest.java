@@ -7,9 +7,11 @@ import java.time.Month;
 import java.util.HashSet;
 import org.junit.After;
 import org.junit.AfterClass;
+import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.fail;
 import static org.junit.Assert.*;
 import org.junit.jupiter.api.Assertions;
 import static com.gargoylesoftware.htmlunit.html.InputElementFactory.instance;
@@ -138,26 +140,49 @@ public class AnimalTest {
 
     // TODO
     @Test
-    public void testGetGender() {
-        fail("The test case is a prototype.");
+    public void testGetGender(){
+        setUp();
+        String expected = "Unknown";
+        String result = animal.getGender();
+        assertEquals(expected, result);
     }
 
     // TODO
     @Test
     public void testSetGender() {
-        fail("The test case is a prototype.");
+        setUp();
+        String gender = "Unknown";
+        animal.setGender(gender);
+        assertEquals(gender, animal.getGender());
     }
     
     // TODO - Attempt to set non male or female
     @Test
     public void testSetGenderBad() {
-        fail("The test case is a prototype.");
+        setUp();
+        String gender = "vegetable";
+        String original = animal.getGender();
+        try{
+            animal.setGender(gender);
+        }
+        catch (IllegalArgumentException iae){
+            assertEquals(original, animal.getGender());
+        }
     }
     
      // TODO - Attempt to set a male to female
     @Test
     public void testSetGenderBadMaleToFemale() {
-        fail("The test case is a prototype.");
+        setUp();
+        animal.setGender("male");
+        String original = animal.getGender();
+                
+        try{
+            animal.setGender("female");
+        }
+        catch (IllegalArgumentException iae){
+            assertEquals(original, animal.getGender());
+        }
     }
 
     @Test
@@ -202,7 +227,7 @@ public class AnimalTest {
     public void testSetFixed() {
         fail("The test case is a prototype.");
     }
-    
+
     // TODO - Attempt to set a fixed animal to not fixed
     @Test
     public void testSetFixedTruetoFalse() {
