@@ -85,7 +85,7 @@ public class Animal implements Comparable<Animal>{
     }
   
     private void speciesValidator(String species) {
-        if(! species"Unknown")){
+        if(! species.equals("Unknown")){
             throw new IllegalArgumentException("The species cannot be changed.");
         }
         if(!species.equals("cat") || !species.equals("dog") ){
