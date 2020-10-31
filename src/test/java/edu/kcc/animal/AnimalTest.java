@@ -287,7 +287,6 @@ public class AnimalTest {
         fail("The test case is a prototype.");
     }
 
-
     @Test
     public void testGetDateAdded() {
         LocalDate expResult = LocalDate.of(2020, 9, 1); // The default date
