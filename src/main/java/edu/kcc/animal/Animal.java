@@ -59,7 +59,12 @@ public class Animal implements Comparable<Animal>{
     
     // TODO: Need idValidator method - Only allow it to change if it's "0". Do not allow an id to be set if the id is already in the idList
     private void idValidator(String id) {
-        
+        if(! id.equals("0")){
+            throw new IllegalArgumentException("You can't change an id that has already been set.");
+        }
+        if (idList.contains(id)){
+            throw new IllegalArgumentException("Id already in idList.");
+        }
     }
     
     public String getName() {
@@ -78,10 +83,14 @@ public class Animal implements Comparable<Animal>{
         speciesValidator(species);
         this.species = species;
     }
-    
-    // TODO: Need speciesValidator method - Only allow cat and dog. Only allow it to change if it's "Unknown".
+  
     private void speciesValidator(String species) {
-        
+        if(! species.equals("Unknown")){
+            throw new IllegalArgumentException("The species cannot be changed.");
+        }
+        if(!species.equals("cat") || !species.equals("dog") ){
+            throw new IllegalArgumentException("The species of must be either cat or dog");
+        } 
     }
     
     public String getGender(){
@@ -95,7 +104,22 @@ public class Animal implements Comparable<Animal>{
     
     // TODO: Need genderValidator method - Only allow male and female. Only allow it to change if it's "Unknown".
     private void genderValidator(String gender) {
-        
+        Animal animal = new Animal();
+        if(animal.getGender().compareTo("Unknown") == 0){
+            if(gender.compareTo("female") == 0){
+                    this.gender = gender;
+            }
+            else if(gender.compareTo("male") == 0){
+                    this.gender = gender;
+            }
+            else{
+                System.out.println("Please enter 'male' or 'female' for "
+                                        + "gender.");
+            }
+        }
+        else{
+            System.out.println("Gender has already been entered.");
+        }
     }
     
     public int getAge(){
@@ -123,7 +147,6 @@ public class Animal implements Comparable<Animal>{
         this.fixed = fixed;
     }
     
-    // TODO: Need fixedValidator method - don't allow an animal that is already fixed to be fixed again 
     private void fixedValidator(boolean fixed) {
       if((this.fixed == true && fixed == false) || (this.fixed == true && fixed == true)){
             throw new IllegalArgumentException("Animal is already fixed.");
@@ -156,7 +179,6 @@ public class Animal implements Comparable<Animal>{
         this.weight = lb;
     }
     
-    // TODO: Need weightValidator method - only allow weight 0.0 to 1000.0 
     public void weightValidator(BigDecimal weight) {
         BigDecimal max = new BigDecimal("1000.0");
         BigDecimal min = new BigDecimal("0.0");
@@ -175,7 +197,6 @@ public class Animal implements Comparable<Animal>{
         dateAdded = ldt;
     }
     
-    // TODO: Need dateValidator method - only allow dates up to a week in the past. Don't allow future dates.
     public void dateValidator(LocalDate dateAdded) {
         LocalDate oneWeekAgo = LocalDate.now().minusDays(7);
         if(dateAdded.isBefore(oneWeekAgo)){
@@ -197,12 +218,13 @@ public class Animal implements Comparable<Animal>{
         lastFeedingTime = ldt;
     }
     
-    // TODO - Don't allow future dates.
     public void feedingValidator(LocalDateTime ldt){
         LocalDateTime twoDaysAgo = LocalDateTime.now().minusDays(2);
         if(ldt.isBefore(twoDaysAgo)){
             throw new IllegalArgumentException(ldt + " is more than"
                     + " two days in the past");
+        } else if (LocalDateTime.now().isBefore(ldt)){
+            throw new IllegalArgumentException(ldt + " is in the future.");
         }
     }
 
