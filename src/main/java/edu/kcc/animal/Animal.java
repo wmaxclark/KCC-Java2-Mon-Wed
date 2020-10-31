@@ -78,34 +78,24 @@ public class Animal implements Comparable<Animal>{
         speciesValidator(species);
         this.species = species;
     }
-    
-    // TODO: Need speciesValidator method - Only allow cat and dog. Only allow it to change if it's "Unknown".
-    private String speciesValidator(String speciesToSet){
-        String result = null;
-        if(this.species == "Unknown"){
-            switch(speciesToSet){
-                case "cat":
-                    result = "cat";
-                case "dog":
-                    result = "dog";
-                default:
-                    throw new IllegalArgumentException("Species may only be cat or dog.");
+  
+    private void speciesValidator(String species) {
+        Animal animal = new Animal();
+        if(animal.getSpecies().compareTo("Unknown") == 0){
+            if(gender.compareTo("cat") == 0){
+                    this.species = species;
             }
-        }
-        else if(this.species == "cat"){
-            if(speciesToSet != this.species){
-                throw new IllegalArgumentException("Animal is already a cat.");
+            else if(gender.compareTo("dog") == 0){
+                    this.species = species;
             }
-        }
-        else if(this.species == "dog"){
-            if(speciesToSet != this.species){
-                throw new IllegalArgumentException("Animal is already a dog.");
+            else{
+                System.out.println("Please enter 'cat' or 'dog' for "
+                                        + "species.");
             }
         }
         else{
-            throw new IllegalArgumentException("Animals species cannot be changed.");
+            System.out.println("Species has already been entered.");
         }
-        return result;
     }
     
     public String getGender(){
@@ -119,7 +109,22 @@ public class Animal implements Comparable<Animal>{
     
     // TODO: Need genderValidator method - Only allow male and female. Only allow it to change if it's "Unknown".
     private void genderValidator(String gender) {
-        
+        Animal animal = new Animal();
+        if(animal.getGender().compareTo("Unknown") == 0){
+            if(gender.compareTo("female") == 0){
+                    this.gender = gender;
+            }
+            else if(gender.compareTo("male") == 0){
+                    this.gender = gender;
+            }
+            else{
+                System.out.println("Please enter 'male' or 'female' for "
+                                        + "gender.");
+            }
+        }
+        else{
+            System.out.println("Gender has already been entered.");
+        }
     }
     
     public int getAge(){
@@ -147,9 +152,10 @@ public class Animal implements Comparable<Animal>{
         this.fixed = fixed;
     }
     
-    // TODO: Need fixedValidator method - don't allow an animal that is already fixed to be fixed again 
     private void fixedValidator(boolean fixed) {
-        
+      if((this.fixed == true && fixed == false) || (this.fixed == true && fixed == true)){
+            throw new IllegalArgumentException("Animal is already fixed.");
+        }
     }
     
     public int getLegs(){
@@ -178,7 +184,6 @@ public class Animal implements Comparable<Animal>{
         this.weight = lb;
     }
     
-    // TODO: Need weightValidator method - only allow weight 0.0 to 1000.0 
     public void weightValidator(BigDecimal weight) {
         BigDecimal max = new BigDecimal("1000.0");
         BigDecimal min = new BigDecimal("0.0");
@@ -197,7 +202,6 @@ public class Animal implements Comparable<Animal>{
         dateAdded = ldt;
     }
     
-    // TODO: Need dateValidator method - only allow dates up to a week in the past. Don't allow future dates.
     public void dateValidator(LocalDate dateAdded) {
         LocalDate oneWeekAgo = LocalDate.now().minusDays(7);
         if(dateAdded.isBefore(oneWeekAgo)){
@@ -219,12 +223,13 @@ public class Animal implements Comparable<Animal>{
         lastFeedingTime = ldt;
     }
     
-    // TODO - Don't allow future dates.
     public void feedingValidator(LocalDateTime ldt){
         LocalDateTime twoDaysAgo = LocalDateTime.now().minusDays(2);
         if(ldt.isBefore(twoDaysAgo)){
             throw new IllegalArgumentException(ldt + " is more than"
                     + " two days in the past");
+        } else if (LocalDateTime.now().isBefore(ldt)){
+            throw new IllegalArgumentException(ldt + " is in the future.");
         }
     }
 
