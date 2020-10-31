@@ -20,18 +20,18 @@ public class Animal implements Comparable<Animal>{
     private LocalDate dateAdded;
     private LocalDateTime lastFeedingTime;
 
-    public Animal(String Id, String Name, String Gender, int Age, boolean Fixed,
-            int Legs, BigDecimal Weight, LocalDate DateAdded, 
-            LocalDateTime LastFeedingTime){
-        setId(Id);
-        setName(Name);
-        setGender(Gender);
-        setAge(Age);
-        setFixed(Fixed);
-        setLegs(Legs);
-        setWeight(Weight);
-        setDateAdded(DateAdded);
-        setLastFeedingTime(LastFeedingTime);
+    public Animal(String id, String name, String gender, int age, boolean fixed,
+            int legs, BigDecimal weight, LocalDate dateAdded, 
+            LocalDateTime lastFeedingTime){
+        setId(id);
+        setName(name);
+        setGender(gender);
+        setAge(age);
+        setFixed(fixed);
+        setLegs(legs);
+        setWeight(weight);
+        setDateAdded(dateAdded);
+        setLastFeedingTime(lastFeedingTime);
     }
     
     public Animal() {
@@ -79,16 +79,15 @@ public class Animal implements Comparable<Animal>{
         this.species = species;
     }
     
-    // TODO: Need speciesValidator method - Only allow cat and dog. Only allow it to change if it's "Unknown".
-    private void speciesValidator(String speciesToSet){
-        if(this.species.equals("Unknown")){
-            if(speciesToSet.toLowerCase().trim() != "cat"
-                    || speciesToSet.toLowerCase().trim() != "dog"){
-                    throw new IllegalArgumentException("Species may only be cat or dog.");
-            }
+    private void speciesValidator(String species) {        
+        if(this.species != "Unknown") {
+            throw new IllegalArgumentException("Species can only be changed if it's set to Unknown.");
         }
-        else{
-            throw new IllegalArgumentException("Animals species cannot be changed.");
+        
+        String lcase = species.toLowerCase();
+        
+        if(lcase != "cat" && lcase != "dog") {
+            throw new IllegalArgumentException("Species can only be set to dog or cat.");
         }
     }
     
@@ -172,7 +171,7 @@ public class Animal implements Comparable<Animal>{
         }
     }
 
-    public LocalDate getDateAdded(){
+    public LocalDate getdateAdded(){
         return dateAdded;
     }
 
@@ -227,4 +226,5 @@ public class Animal implements Comparable<Animal>{
             return this.name.compareTo(other.name);
         }
     }
+    
 }
