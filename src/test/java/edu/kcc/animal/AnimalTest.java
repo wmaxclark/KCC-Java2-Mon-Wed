@@ -1,16 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package edu.kcc.animal;
 
-import static com.gargoylesoftware.htmlunit.html.InputElementFactory.instance;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
+import java.time.Month;
+import java.util.HashSet;
 import org.junit.After;
 import org.junit.AfterClass;
 import static org.junit.Assert.assertEquals;
@@ -19,18 +13,18 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.junit.Assert.*;
+import org.junit.jupiter.api.Assertions;
+import static com.gargoylesoftware.htmlunit.html.InputElementFactory.instance;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import org.junit.jupiter.api.Assertions;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-
 
 /**
  *
  * @author k0519415
  */
 public class AnimalTest {
-
+    
     private Animal animal;
     private static final String GOOD_NAME = "Snowball";
     private static final String GOOD_ID = "0";
@@ -42,23 +36,23 @@ public class AnimalTest {
     private static final BigDecimal GOOD_WEIGHT = BigDecimal.valueOf(0);
     private static final LocalDate GOOD_DATE_ADDED = LocalDate.of(2020, 9, 1);
     private static final LocalDateTime GOOD_LAST_FEEDING_TIME = LocalDateTime.of(2020, 10, 1, 23, 59);
-
+    
     public AnimalTest() {
     }
-
+    
     @BeforeClass
     public static void setUpClass() {
     }
-
+    
     @AfterClass
     public static void tearDownClass() {
     }
-
+    
     @Before
     public void setUp() {
         animal = new Animal();
     }
-
+    
     @After
     public void tearDown() {
     }
@@ -74,7 +68,7 @@ public class AnimalTest {
     public void testSetId() {
         fail("The test case is a prototype.");
     }
-
+    
     // TODO - Create a second Animal object with a unique id. Try to set the first animal's id equal to the second one
     @Test
     public void testSetIdBad() {
@@ -89,7 +83,6 @@ public class AnimalTest {
         assertEquals(expected, actual);
     }
 
-    // TODO
     @Test
     public void testSetName() {
         setUp();
@@ -100,31 +93,49 @@ public class AnimalTest {
     // TODO
     @Test
     public void testGetSpecies() {
-        fail("The test case is a prototype.");
+        setUp();
+        String expected = "Unknown";
+        String actual = animal.getSpecies();
+        assertEquals(expected, actual);
     }
 
     // TODO
     @Test
     public void testSetSpeciesCat() {
-        fail("The test case is a prototype.");
+        setUp();
+        animal.setSpecies("cat");
+        assertEquals("cat", animal.getSpecies());
     }
-
+    
     // TODO
     @Test
     public void testSetSpeciesDog() {
-        fail("The test case is a prototype.");
+        setUp();
+        animal.setSpecies("dog");
+        assertEquals("dog", animal.getSpecies());
     }
-
+    
     // TODO - Attempt to set a non Cat or Dog
     @Test
     public void testSetSpeciesBad() {
-        fail("The test case is a prototype.");
+        try{
+            animal.setSpecies("dolphin");
+            fail("Species cannot be set to dolphin");
+        } catch(IllegalArgumentException ex) {
+            assertTrue(true);
+        }
     }
-
+    
     // TODO - Attempt to set a cat to a dog
     @Test
     public void testSetSpeciesBadCatToDog() {
-        fail("The test case is a prototype.");
+        try{
+            animal.setSpecies("cat");
+            animal.setSpecies("dog");
+            fail("Species cannot be switched once set");
+        } catch(IllegalArgumentException ex) {
+            assertTrue(true);
+        }
     }
 
     // TODO
@@ -144,7 +155,7 @@ public class AnimalTest {
         animal.setGender(gender);
         assertEquals(gender, animal.getGender());
     }
-
+    
     // TODO - Attempt to set non male or female
     @Test
     public void testSetGenderBad() {
@@ -158,8 +169,8 @@ public class AnimalTest {
             assertEquals(original, animal.getGender());
         }
     }
-
-    // TODO - Attempt to set a male to female
+    
+     // TODO - Attempt to set a male to female
     @Test
     public void testSetGenderBadMaleToFemale() {
         setUp();
@@ -175,11 +186,11 @@ public class AnimalTest {
     }
 
     @Test
-    public void testGetAge() {
+    public void testGetAge(){
         setUp();
-        int expected = 0;
-        int result = animal.getAge();
-        assertEquals(expected, result);
+        int expected=0;
+        int result=animal.getAge();
+        assertEquals(expected,result);
     }
 
     // TODO
@@ -188,7 +199,7 @@ public class AnimalTest {
         animal.setAge(3);
         assertEquals(3,animal.getAge());
     }
-
+    
     // TODO
     @Test
     public void testSetAgeNegativeBad() {
@@ -196,7 +207,7 @@ public class AnimalTest {
                 () -> animal.setAge(-5),
                 "Invalid Animal age.");
     }
-
+    
     // TODO
     @Test
     public void testSetAgeOver100Bad() {
@@ -204,7 +215,7 @@ public class AnimalTest {
     }
 
     @Test
-    public void testGetFixed() {
+    public void testGetFixed(){
         setUp();
         boolean expected = false;
         boolean actual = animal.getFixed();
@@ -214,18 +225,8 @@ public class AnimalTest {
     // TODO
     @Test
     public void testSetFixed() {
-        System.out.println("setFixed");
-        boolean fixed = true;
-        Animal animal = new Animal();
-        animal.setFixed(fixed);
-        assertEquals(fixed, animal.getFixed());
+        fail("The test case is a prototype.");
     }
-
-    
-
-
-    // TODO - Need testGetName method (Chase)
-
 
     // TODO - Attempt to set a fixed animal to not fixed
     @Test
@@ -234,7 +235,7 @@ public class AnimalTest {
     }
 
     @Test
-    public void testGetLegs() {
+    public void testGetLegs(){
         setUp();
         int expected = 4;
         int actual = animal.getLegs();
@@ -247,24 +248,25 @@ public class AnimalTest {
         animal.setLegs(4);
         assertEquals(4,animal.getLegs());
     }
-
+    
     // TODO
     @Test
     public void testSetLegsNegativeBad() {
         fail("The test case is a prototype.");
     }
-
+    
     // TODO
     @Test
     public void testSetLegsGreaterThan4Bad() {
         fail("The test case is a prototype.");
     }
 
+
     @Test
     public void testGetWeight() {
         BigDecimal expResult = new BigDecimal(0);
         BigDecimal result = animal.getWeight();
-        assertEquals(expResult, result);
+        assertEquals(expResult,result);
     }
 
     // TODO
@@ -272,42 +274,61 @@ public class AnimalTest {
     public void testSetWeight() {
         fail("The test case is a prototype.");
     }
-
+    
     // TODO
     @Test
     public void testSetWeightNegativeBad() {
         fail("The test case is a prototype.");
     }
-
+    
     // TODO
     @Test
     public void testSetWeightAbove1000Bad() {
         fail("The test case is a prototype.");
     }
 
-    // TODO
+
     @Test
-    public void testGetdateAdded() {
-        fail("The test case is a prototype.");
+    public void testGetDateAdded() {
+        LocalDate expResult = LocalDate.of(2020, 9, 1); // The default date
+        LocalDate result = animal.getDateAdded();
+        assertEquals(expResult.toString(), result.toString());
     }
 
     // TODO
     @Test
     public void testSetDateAdded() {
-        fail("The test case is a prototype.");
+        LocalDate goodDate = LocalDate.now();
+        animal.setDateAdded(goodDate);
+        assertEquals(goodDate.toString(), animal.getDateAdded().toString());
     }
-
-    // TODO
+    
     @Test
     public void testSetDateAddedMoreThanAWeekAgoBad() {
-        fail("The test case is a prototype.");
+        LocalDate badDate = LocalDate.now().minusWeeks(1));
+        LocalDate original = animal.getDateAdded();
+        try{
+            animal.setDateAdded(badDate);
+            fail("The date added may not be longer than a week in the past.");           
+        }
+        catch(IllegalArguementException iae){
+            assertEquals(original, animal.getDateAdded());
+        }
     }
-
-    // TODO
+    
     @Test
     public void testSetDateAddedFutureDateBad() {
-        fail("The test case is a prototype.");
+        LocalDate badDate = LocalDate.now().plusDays(1);
+        LocalDate original = animal.getDateAdded();
+        try{
+            animal.setDateAdded(badDate);
+            fail("The date added may not be in the future.");           
+        }
+        catch(IllegalArguementException iae){
+            assertEquals(original, animal.getDateAdded());
+        }
     }
+
 
     // TODO
     @Test
@@ -320,8 +341,7 @@ public class AnimalTest {
     public void testSetLastFeedingTime() {
         fail("The test case is a prototype.");
     }
-
-    // TODO
+    
     @Test
     public void testSetLastFeedingTimeMoreThan2DaysAgoBad() {
         LocalDateTime ldtThreeDays = LocalDateTime.now().minusDays(3);
@@ -331,8 +351,7 @@ public class AnimalTest {
         });
 
     }
-
-    // TODO
+    
     @Test
     public void testSetLastFeedingTimeFutureDateBad() {
         LocalDateTime ldtFutureDate = LocalDateTime.now().plusDays(1);
@@ -343,13 +362,13 @@ public class AnimalTest {
         
     }
 
+
     // TODO
     @Test
     public void testToString() {
         fail("The test case is a prototype.");
     }
 
-    // TODO
     @Test
     public void testCompareTo() {
         System.out.println("compareTo");
@@ -375,5 +394,5 @@ public class AnimalTest {
         int result = instance.compareTo(other);
         assertEquals(expResult, result);
     }
-
+    
 }
