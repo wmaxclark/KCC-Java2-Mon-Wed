@@ -41,7 +41,7 @@ public interface AnimalDAO {
     * @throws AnimalDataException
     */
     ArrayList<Animal> getAllAnimals() 
-            throws AnimalDateException;
+            throws AnimalDataException;
     
     /*
     * Looks for the original Animal and updates it to match the updated Animal.

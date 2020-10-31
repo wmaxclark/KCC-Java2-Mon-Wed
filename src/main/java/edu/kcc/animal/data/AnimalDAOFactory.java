@@ -13,17 +13,15 @@ package edu.kcc.animal.data;
 public class AnimalDAOFactory {
     private static final String DAO_SOURCE = "CSV";
     
-    public static AnimalDAO get getAnimalDAO(){
+    public static AnimalDAO getAnimalDAO(){
         AnimalDAO dao = null;
         switch(DAO_SOURCE){
             case "CSV":
                 dao = new AnimalDAOCSV();
                 break;
             case "XML":
-                dao = new AnimalDAOXML();
                 break;
             case "MYSQL":
-                dao = new AnimalDAOMySQL();
                 break;
             default:
         }
