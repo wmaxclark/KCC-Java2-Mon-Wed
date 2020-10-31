@@ -20,18 +20,18 @@ public class Animal implements Comparable<Animal>{
     private LocalDate dateAdded;
     private LocalDateTime lastFeedingTime;
 
-    public Animal(String id, String name, String gender, int age, boolean fixed,
-            int legs, BigDecimal weight, LocalDate dateAdded, 
-            LocalDateTime lastFeedingTime){
-        setId(id);
-        setName(name);
-        setGender(gender);
-        setAge(age);
-        setFixed(fixed);
-        setLegs(legs);
-        setWeight(weight);
-        setDateAdded(dateAdded);
-        setLastFeedingTime(lastFeedingTime);
+    public Animal(String Id, String Name, String Gender, int Age, boolean Fixed,
+            int Legs, BigDecimal Weight, LocalDate DateAdded, 
+            LocalDateTime LastFeedingTime){
+        setId(Id);
+        setName(Name);
+        setGender(Gender);
+        setAge(Age);
+        setFixed(Fixed);
+        setLegs(Legs);
+        setWeight(Weight);
+        setDateAdded(DateAdded);
+        setLastFeedingTime(LastFeedingTime);
     }
     
     public Animal() {
@@ -80,8 +80,16 @@ public class Animal implements Comparable<Animal>{
     }
     
     // TODO: Need speciesValidator method - Only allow cat and dog. Only allow it to change if it's "Unknown".
-    private void speciesValidator(String species) {
-        
+    private void speciesValidator(String speciesToSet){
+        if(this.species.equals("Unknown")){
+            if(speciesToSet.toLowerCase().trim() != "cat"
+                    || speciesToSet.toLowerCase().trim() != "dog"){
+                    throw new IllegalArgumentException("Species may only be cat or dog.");
+            }
+        }
+        else{
+            throw new IllegalArgumentException("Animals species cannot be changed.");
+        }
     }
     
     public String getGender(){
@@ -123,7 +131,6 @@ public class Animal implements Comparable<Animal>{
         this.fixed = fixed;
     }
     
-    // TODO: Need fixedValidator method - don't allow an animal that is already fixed to be fixed again 
     private void fixedValidator(boolean fixed) {
       if((this.fixed == true && fixed == false) || (this.fixed == true && fixed == true)){
             throw new IllegalArgumentException("Animal is already fixed.");
@@ -156,7 +163,6 @@ public class Animal implements Comparable<Animal>{
         this.weight = lb;
     }
     
-    // TODO: Need weightValidator method - only allow weight 0.0 to 1000.0 
     public void weightValidator(BigDecimal weight) {
         BigDecimal max = new BigDecimal("1000.0");
         BigDecimal min = new BigDecimal("0.0");
@@ -166,7 +172,7 @@ public class Animal implements Comparable<Animal>{
         }
     }
 
-    public LocalDate getdateAdded(){
+    public LocalDate getDateAdded(){
         return dateAdded;
     }
 
@@ -175,7 +181,6 @@ public class Animal implements Comparable<Animal>{
         dateAdded = ldt;
     }
     
-    // TODO: Need dateValidator method - only allow dates up to a week in the past. Don't allow future dates.
     public void dateValidator(LocalDate dateAdded) {
         LocalDate oneWeekAgo = LocalDate.now().minusDays(7);
         if(dateAdded.isBefore(oneWeekAgo)){
@@ -197,7 +202,6 @@ public class Animal implements Comparable<Animal>{
         lastFeedingTime = ldt;
     }
     
-    // TODO - Don't allow future dates.
     public void feedingValidator(LocalDateTime ldt){
         LocalDateTime twoDaysAgo = LocalDateTime.now().minusDays(2);
         if(ldt.isBefore(twoDaysAgo)){
@@ -223,5 +227,4 @@ public class Animal implements Comparable<Animal>{
             return this.name.compareTo(other.name);
         }
     }
-    
 }
