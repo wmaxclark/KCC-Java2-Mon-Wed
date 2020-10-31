@@ -11,6 +11,11 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import static com.gargoylesoftware.htmlunit.html.InputElementFactory.instance;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  *
@@ -19,6 +24,16 @@ import static org.junit.Assert.*;
 public class AnimalTest {
     
     private Animal animal;
+    private static final String GOOD_NAME = "Snowball";
+    private static final String GOOD_ID = "0";
+    private static final String GOOD_SPECIES = "Artiodactyla ";
+    private static final String GOOD_GENDER = "Female";
+    private static final int GOOD_AGE = 0;
+    private static final boolean GOOD_FIXED = false;
+    private static final int GOOD_LEGS = 4;
+    private static final BigDecimal GOOD_WEIGHT = BigDecimal.valueOf(0);
+    private static final LocalDate GOOD_DATE_ADDED = LocalDate.of(2020, 9, 1);
+    private static final LocalDateTime GOOD_LAST_FEEDING_TIME = LocalDateTime.of(2020, 10, 1, 23, 59);
     
     public AnimalTest() {
     }
@@ -66,10 +81,11 @@ public class AnimalTest {
         assertEquals(expected, actual);
     }
 
-    // TODO
     @Test
     public void testSetName() {
-        fail("The test case is a prototype.");
+        setUp();
+        animal.setName(GOOD_NAME);
+        assertEquals(GOOD_NAME, animal.getName());
     }
 
     // TODO
@@ -134,16 +150,17 @@ public class AnimalTest {
         assertEquals(expected,result);
     }
 
-    // TODO
     @Test
     public void testSetAge() {
-        fail("The test case is a prototype.");
+        animal.setAge(3);
+        assertEquals(3,animal.getAge());
     }
     
-    // TODO
     @Test
     public void testSetAgeNegativeBad() {
-        fail("The test case is a prototype.");
+        assertThrows(IllegalArgumentException.class,
+                () -> animal.setAge(-5),
+                "Invalid Animal age.");
     }
     
     // TODO
@@ -160,10 +177,13 @@ public class AnimalTest {
         assertEquals(expected, actual);
     }
 
-    // TODO
     @Test
     public void testSetFixed() {
-        fail("The test case is a prototype.");
+        System.out.println("setFixed");
+        boolean fixed = true;
+        Animal animal = new Animal();
+        animal.setFixed(fixed);
+        assertEquals(fixed, animal.getFixed());
     }
     
     // TODO - Attempt to set a fixed animal to not fixed
@@ -282,16 +302,24 @@ public class AnimalTest {
         fail("The test case is a prototype.");
     }
     
-    // TODO
     @Test
     public void testSetLastFeedingTimeMoreThan2DaysAgoBad() {
-        fail("The test case is a prototype.");
+        LocalDateTime ldtThreeDays = LocalDateTime.now().minusDays(3);
+        Animal instance = new Animal();
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            instance.setLastFeedingTime(ldtThreeDays);
+        });
+
     }
     
-    // TODO
     @Test
     public void testSetLastFeedingTimeFutureDateBad() {
-        fail("The test case is a prototype.");
+        LocalDateTime ldtFutureDate = LocalDateTime.now().plusDays(1);
+        Animal instance = new Animal();
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            instance.setLastFeedingTime(ldtFutureDate);
+                });
+        
     }
 
 
@@ -301,10 +329,30 @@ public class AnimalTest {
         fail("The test case is a prototype.");
     }
 
-    // TODO
     @Test
     public void testCompareTo() {
-        fail("The test case is a prototype.");
+        System.out.println("compareTo");
+        Animal other = new Animal(GOOD_ID,
+                GOOD_NAME,
+                GOOD_GENDER,
+                GOOD_AGE,
+                GOOD_FIXED,
+                GOOD_LEGS,
+                GOOD_WEIGHT,
+                GOOD_DATE_ADDED,
+                GOOD_LAST_FEEDING_TIME);
+        Animal instance = new Animal(GOOD_ID,
+                GOOD_NAME,
+                GOOD_GENDER,
+                GOOD_AGE,
+                GOOD_FIXED,
+                GOOD_LEGS,
+                GOOD_WEIGHT,
+                GOOD_DATE_ADDED,
+                GOOD_LAST_FEEDING_TIME);
+        int expResult = 0;
+        int result = instance.compareTo(other);
+        assertEquals(expResult, result);
     }
-    
+
 }
