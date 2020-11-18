@@ -20,18 +20,18 @@ public class Animal implements Comparable<Animal>{
     private LocalDate dateAdded;
     private LocalDateTime lastFeedingTime;
 
-    public Animal(String Id, String Name, String Gender, int Age, boolean Fixed,
-            int Legs, BigDecimal Weight, LocalDate DateAdded, 
-            LocalDateTime LastFeedingTime){
-        setId(Id);
-        setName(Name);
-        setGender(Gender);
-        setAge(Age);
-        setFixed(Fixed);
-        setLegs(Legs);
-        setWeight(Weight);
-        setDateAdded(DateAdded);
-        setLastFeedingTime(LastFeedingTime);
+    public Animal(String id, String name, String gender, int age, boolean fixed,
+            int legs, BigDecimal weight, LocalDate dateAdded, 
+            LocalDateTime lastFeedingTime){
+        setId(id);
+        setName(name);
+        setGender(gender);
+        setAge(age);
+        setFixed(fixed);
+        setLegs(legs);
+        setWeight(weight);
+        setDateAdded(dateAdded);
+        setLastFeedingTime(lastFeedingTime);
     }
     
     public Animal() {
@@ -59,7 +59,12 @@ public class Animal implements Comparable<Animal>{
     
     // TODO: Need idValidator method - Only allow it to change if it's "0". Do not allow an id to be set if the id is already in the idList
     private void idValidator(String id) {
-        
+        if(! id.equals("0")){
+            throw new IllegalArgumentException("You can't change an id that has already been set.");
+        }
+        if (idList.contains(id)){
+            throw new IllegalArgumentException("Id already in idList.");
+        }
     }
     
     public String getName() {
@@ -78,18 +83,14 @@ public class Animal implements Comparable<Animal>{
         speciesValidator(species);
         this.species = species;
     }
-    
-    // TODO: Need speciesValidator method - Only allow cat and dog. Only allow it to change if it's "Unknown".
-    private void speciesValidator(String speciesToSet){
-        if(this.species.equals("Unknown")){
-            if(speciesToSet.toLowerCase().trim() != "cat"
-                    || speciesToSet.toLowerCase().trim() != "dog"){
-                    throw new IllegalArgumentException("Species may only be cat or dog.");
-            }
+  
+    private void speciesValidator(String species) {
+        if(! species.equals("Unknown")){
+            throw new IllegalArgumentException("The species cannot be changed.");
         }
-        else{
-            throw new IllegalArgumentException("Animals species cannot be changed.");
-        }
+        if(!species.equals("cat") || !species.equals("dog") ){
+            throw new IllegalArgumentException("The species of must be either cat or dog");
+        } 
     }
     
     public String getGender(){
@@ -103,7 +104,22 @@ public class Animal implements Comparable<Animal>{
     
     // TODO: Need genderValidator method - Only allow male and female. Only allow it to change if it's "Unknown".
     private void genderValidator(String gender) {
-        
+        Animal animal = new Animal();
+        if(animal.getGender().compareTo("Unknown") == 0){
+            if(gender.compareTo("female") == 0){
+                    this.gender = gender;
+            }
+            else if(gender.compareTo("male") == 0){
+                    this.gender = gender;
+            }
+            else{
+                System.out.println("Please enter 'male' or 'female' for "
+                                        + "gender.");
+            }
+        }
+        else{
+            System.out.println("Gender has already been entered.");
+        }
     }
     
     public int getAge(){
@@ -172,7 +188,7 @@ public class Animal implements Comparable<Animal>{
         }
     }
 
-    public LocalDate getDateAdded(){
+    public LocalDate getdateAdded(){
         return dateAdded;
     }
 
@@ -227,4 +243,5 @@ public class Animal implements Comparable<Animal>{
             return this.name.compareTo(other.name);
         }
     }
+    
 }
