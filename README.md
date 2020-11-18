@@ -2,8 +2,7 @@
 
 ## Use Case Diagram
 ![Use Case Diagram](images/Animal_Use_Case.svg)
-
 ## Sequence Diagram
-
+![Use Case Diagram](images/Animal_Sequence_Diagram.svg)
 ## Class Diagram
 ![Class Diagram](images/Animal_Class_Diagram.svg)
