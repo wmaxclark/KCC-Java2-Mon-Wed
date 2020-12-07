@@ -307,7 +307,7 @@ public class AnimalTest {
     
     @Test
     public void testSetDateAddedMoreThanAWeekAgoBad() {
-        LocalDate badDate = LocalDate.now().minusWeeks(1));
+        LocalDate badDate = LocalDate.now().minusWeeks(1);
         LocalDate original = animal.getDateAdded();
         try{
             animal.setDateAdded(badDate);
