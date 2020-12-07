@@ -175,7 +175,7 @@ public class Animal implements Comparable<Animal>{
     }
     
     public void  setWeight(BigDecimal lb){
-        weightValidator(weight);
+        weightValidator(lb);
         this.weight = lb;
     }
     
@@ -188,12 +188,12 @@ public class Animal implements Comparable<Animal>{
         }
     }
 
-    public LocalDate getdateAdded(){
+    public LocalDate getDateAdded(){
         return dateAdded;
     }
 
     public void setDateAdded(LocalDate ldt){
-        dateValidator(dateAdded);
+        dateValidator(ldt);
         dateAdded = ldt;
     }
     
@@ -243,5 +243,4 @@ public class Animal implements Comparable<Animal>{
             return this.name.compareTo(other.name);
         }
     }
-    
 }

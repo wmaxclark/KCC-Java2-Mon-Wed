@@ -16,7 +16,6 @@ import static org.junit.Assert.*;
 import org.junit.jupiter.api.Assertions;
 import static com.gargoylesoftware.htmlunit.html.InputElementFactory.instance;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
@@ -313,7 +312,7 @@ public class AnimalTest {
             animal.setDateAdded(badDate);
             fail("The date added may not be longer than a week in the past.");           
         }
-        catch(IllegalArguementException iae){
+        catch(IllegalArgumentException iae){
             assertEquals(original, animal.getDateAdded());
         }
     }
@@ -326,7 +325,7 @@ public class AnimalTest {
             animal.setDateAdded(badDate);
             fail("The date added may not be in the future.");           
         }
-        catch(IllegalArguementException iae){
+        catch(IllegalArgumentException iae){
             assertEquals(original, animal.getDateAdded());
         }
     }
