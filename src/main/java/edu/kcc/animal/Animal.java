@@ -20,12 +20,13 @@ public class Animal implements Comparable<Animal>{
     private LocalDate dateAdded;
     private LocalDateTime lastFeedingTime;
 
-    public Animal(String id, String name, String gender, int age, boolean fixed,
+    public Animal(String id, String name, String species, String gender, int age, boolean fixed,
             int legs, BigDecimal weight, LocalDate dateAdded, 
             LocalDateTime lastFeedingTime){
         setId(id);
         setName(name);
         setGender(gender);
+        setSpecies(species);
         setAge(age);
         setFixed(fixed);
         setLegs(legs);
@@ -85,12 +86,7 @@ public class Animal implements Comparable<Animal>{
     }
   
     private void speciesValidator(String species) {
-        if(! species.equals("Unknown")){
-            throw new IllegalArgumentException("The species cannot be changed.");
-        }
-        if(!species.equals("cat") || !species.equals("dog") ){
-            throw new IllegalArgumentException("The species of must be either cat or dog");
-        } 
+        //
     }
     
     public String getGender(){
@@ -113,8 +109,8 @@ public class Animal implements Comparable<Animal>{
                     this.gender = gender;
             }
             else{
-                System.out.println("Please enter 'male' or 'female' for "
-                                        + "gender.");
+                //System.out.println("Please enter 'male' or 'female' for "
+                               //         + "gender.");
             }
         }
         else{

@@ -15,8 +15,6 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.function.Function;
-
 /**
  *
  * @author William Clark
@@ -60,8 +58,7 @@ public class Main {
                         System.exit(-1);
                     } catch(IOException ioe) {
                         System.out.println("ERROR: " + ioe.getMessage());
-                    } 
-                    
+                    }
                     break;
                 case "2":
                     //
@@ -81,22 +78,22 @@ public class Main {
         Socket socket = new Socket(HOST_NAME, PORT);
         DataInputStream inputStream = new DataInputStream(socket.getInputStream());
         DataOutputStream outputStream = new DataOutputStream(socket.getOutputStream());
-        outputStream.writeBytes(name);
+        outputStream.writeUTF(name);
         outputStream.flush();
         
         // Construct the animal
-        animalOut = new Animal(
-                inputStream.readUTF(),
-                inputStream.readUTF(),
-                inputStream.readUTF(),
-                inputStream.readInt(),
-                inputStream.readBoolean(),
-                inputStream.readInt(),
-                BigDecimal.valueOf(inputStream.readDouble()),
-                LocalDate.parse(inputStream.readUTF()),
-                LocalDateTime.parse(inputStream.readUTF())
-        );
+        String Id = inputStream.readUTF();
+        String nameIn = inputStream.readUTF();
+        String species = inputStream.readUTF();
+        String gender = inputStream.readUTF();
+        int age = inputStream.readInt();
+        boolean fixed = inputStream.readBoolean();
+        int legs = inputStream.readInt();
+        BigDecimal weight = BigDecimal.valueOf(inputStream.readDouble());
+        LocalDate dateAdded = LocalDate.parse(inputStream.readUTF());
+        LocalDateTime lastFeedingTime = LocalDateTime.parse(inputStream.readUTF());
         
+        animalOut = new Animal(Id, nameIn, species, gender, age, fixed, legs, weight, dateAdded, lastFeedingTime);
         
         inputStream.close();
         outputStream.close();
