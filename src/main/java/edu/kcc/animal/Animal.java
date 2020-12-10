@@ -23,16 +23,16 @@ public class Animal implements Comparable<Animal>{
     public Animal(String id, String name, String species, String gender, int age, boolean fixed,
             int legs, BigDecimal weight, LocalDate dateAdded, 
             LocalDateTime lastFeedingTime){
-        setId(id);
-        setName(name);
-        setGender(gender);
-        setSpecies(species);
-        setAge(age);
-        setFixed(fixed);
-        setLegs(legs);
-        setWeight(weight);
-        setDateAdded(dateAdded);
-        setLastFeedingTime(lastFeedingTime);
+        this.id = id;
+        this.name = name;
+        this.species = species;
+        this.gender = gender;
+        this.age = age;
+        this.fixed = fixed;
+        this.legs = legs;
+        this.weight = weight;
+        this.dateAdded = dateAdded;
+        this.lastFeedingTime = lastFeedingTime;
     }
     
     public Animal() {

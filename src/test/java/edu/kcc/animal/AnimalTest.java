@@ -370,30 +370,30 @@ public class AnimalTest {
         fail("The test case is a prototype.");
     }
 
-    @Test
-    public void testCompareTo() {
-        System.out.println("compareTo");
-        Animal other = new Animal(GOOD_ID,
-                GOOD_NAME,
-                GOOD_GENDER,
-                GOOD_AGE,
-                GOOD_FIXED,
-                GOOD_LEGS,
-                GOOD_WEIGHT,
-                GOOD_DATE_ADDED,
-                GOOD_LAST_FEEDING_TIME);
-        Animal instance = new Animal(GOOD_ID,
-                GOOD_NAME,
-                GOOD_GENDER,
-                GOOD_AGE,
-                GOOD_FIXED,
-                GOOD_LEGS,
-                GOOD_WEIGHT,
-                GOOD_DATE_ADDED,
-                GOOD_LAST_FEEDING_TIME);
-        int expResult = 0;
-        int result = instance.compareTo(other);
-        assertEquals(expResult, result);
-    }
+//    @Test
+//    public void testCompareTo() {
+//        System.out.println("compareTo");
+//        Animal other = new Animal(GOOD_ID,
+//                GOOD_NAME,
+//                GOOD_GENDER,
+//                GOOD_AGE,
+//                GOOD_FIXED,
+//                GOOD_LEGS,
+//                GOOD_WEIGHT,
+//                GOOD_DATE_ADDED,
+//                GOOD_LAST_FEEDING_TIME);
+//        Animal instance = new Animal(GOOD_ID,
+//                GOOD_NAME,
+//                GOOD_GENDER,
+//                GOOD_AGE,
+//                GOOD_FIXED,
+//                GOOD_LEGS,
+//                GOOD_WEIGHT,
+//                GOOD_DATE_ADDED,
+//                GOOD_LAST_FEEDING_TIME);
+//        int expResult = 0;
+//        int result = instance.compareTo(other);
+//        assertEquals(expResult, result);
+//    }
     
 }

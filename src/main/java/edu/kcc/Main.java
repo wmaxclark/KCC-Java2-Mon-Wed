@@ -15,6 +15,7 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 /**
  *
  * @author William Clark
@@ -22,7 +23,7 @@ import java.time.LocalDateTime;
 public class Main {
 
     private static final int PORT = 5555;
-    private static final String HOST_NAME = "YURY-BOT";
+    private static final String HOST_NAME = "localhost";
     
     /**
      * @param args the command line arguments
@@ -51,7 +52,7 @@ public class Main {
                     //
                     String name = UIUtility.getUserString("Please enter the name of animal: ");
                     try{
-                        System.out.println("Animal found: " + getAnimalFromServer(name).toString());
+                        System.out.println("Animals found: " + getAnimalsFromServer(name).toString());
                     } catch(UnknownHostException uhe){
                         System.out.println("ERROR: " + uhe.getMessage());
                         System.out.println("Program terminating!");
@@ -64,7 +65,7 @@ public class Main {
                     //
                     break;
                 case "3":
-                    //
+                    working = false;
                     break;
                 default:
                     UIUtility.showErrorMessage(errorMessage, true);
@@ -73,8 +74,8 @@ public class Main {
         UIUtility.showMessage("\nProgram complete.");
     }
 
-    private static Animal getAnimalFromServer(String name) throws UnknownHostException, IOException {
-        Animal animalOut;
+    private static ArrayList<Animal> getAnimalsFromServer(String name) throws UnknownHostException, IOException {
+        ArrayList<Animal> animals = new ArrayList<>();
         Socket socket = new Socket(HOST_NAME, PORT);
         DataInputStream inputStream = new DataInputStream(socket.getInputStream());
         DataOutputStream outputStream = new DataOutputStream(socket.getOutputStream());
@@ -82,21 +83,22 @@ public class Main {
         outputStream.flush();
         
         // Construct the animal
-        String Id = inputStream.readUTF();
-        String nameIn = inputStream.readUTF();
-        String species = inputStream.readUTF();
-        String gender = inputStream.readUTF();
-        int age = inputStream.readInt();
-        boolean fixed = inputStream.readBoolean();
-        int legs = inputStream.readInt();
-        BigDecimal weight = BigDecimal.valueOf(inputStream.readDouble());
-        LocalDate dateAdded = LocalDate.parse(inputStream.readUTF());
-        LocalDateTime lastFeedingTime = LocalDateTime.parse(inputStream.readUTF());
         
-        animalOut = new Animal(Id, nameIn, species, gender, age, fixed, legs, weight, dateAdded, lastFeedingTime);
-        
+        for (int i = 0; i < 3; i++) {
+            String Id = inputStream.readUTF();
+            String nameIn = inputStream.readUTF();
+            String species = inputStream.readUTF();
+            String gender = inputStream.readUTF();
+            int age = inputStream.readInt();
+            boolean fixed = inputStream.readBoolean();
+            int legs = inputStream.readInt();
+            BigDecimal weight = BigDecimal.valueOf(inputStream.readDouble());
+            LocalDate dateAdded = LocalDate.parse(inputStream.readUTF());
+            LocalDateTime lastFeedingTime = LocalDateTime.parse(inputStream.readUTF());
+            animals.add(new Animal(Id, nameIn, species, gender, age, fixed, legs, weight, dateAdded, lastFeedingTime));
+        }
         inputStream.close();
         outputStream.close();
-        return animalOut;
+        return animals;
     }
 }

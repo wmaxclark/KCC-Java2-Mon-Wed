@@ -14,7 +14,7 @@ USE animal_db;
 ******************************************************************************* */
 DROP TABLE IF EXISTS Animal;
 CREATE TABLE Animal(
-	AnimalID INT NOT NULL COMMENT 'The primary key of the animal.'
+	AnimalID INT NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'The primary key of the animal.'
 	, Name VARCHAR(20) NOT NULL COMMENT 'The name of the animal.'
 	, Species VARCHAR(20) NOT NULL COMMENT 'The species of the animal.'
      , Gender VARCHAR(20) NOT NULL COMMENT 'The gender of the animal.'
@@ -36,9 +36,8 @@ The procedure to create a new record in the OrderRecord table.
 */
 DELIMITER $$
 DROP PROCEDURE IF EXISTS sp_create_animal$$
-CREATE PROCEDURE sp_create_order_record(
-     IN p_AnimalID INT
-     ,IN p_Name VARCHAR(20)
+CREATE PROCEDURE sp_create_animal(
+     IN p_Name VARCHAR(20)
      ,IN p_Species VARCHAR(20)
      ,IN p_Gender VARCHAR(20)
      ,IN p_Age INT
@@ -50,8 +49,7 @@ CREATE PROCEDURE sp_create_order_record(
 ) COMMENT 'Create a new animal record in database'
 BEGIN
      INSERT INTO Animal(
-          AnimalID
-          , Name
+          Name
           , Species
           , Gender
           , Age
@@ -62,8 +60,7 @@ BEGIN
           , LastFeedingTime
           )
      VALUES(
-          p_AnimalID
-          , p_Name
+          p_Name
           , p_Species
           , p_Gender
           , p_Age
@@ -78,13 +75,11 @@ END$$
 DELIMITER ;
 
 /*
-The procedure to select an animal in the animal table.
+The procedure to select all animals in the animal table.
 */
 DELIMITER $$
-DROP PROCEDURE IF EXISTS sp_select_animal_by_ID$$
-CREATE PROCEDURE sp_select_animal_by_ID(
-     IN p_AnimalID INT
-) COMMENT 'Find an animal in database'
+DROP PROCEDURE IF EXISTS sp_select_all_animals$$
+CREATE PROCEDURE sp_select_all_animals() COMMENT 'Find an animal in database'
 BEGIN
 
      SELECT
@@ -99,7 +94,7 @@ BEGIN
            , DateAdded
            , LastFeedingTime
      FROM Animal
-     WHERE AnimalID = p_AnimalID
+	ORDER BY AnimalID ASC
      ;
 END$$
 DELIMITER ;
@@ -130,3 +125,9 @@ BEGIN
      ;
 END$$
 DELIMITER ;
+
+CALL sp_create_animal("Bebon", "cat", "female", "1", 1, "4", "7.0", "2020-06-01", "2020-12-09T10:15:30");
+
+CALL sp_create_animal("Monet", "cat", "female", "1", 1, "4", "10.0", "2020-06-01", "2020-12-09T10:15:30");
+
+CALL sp_create_animal("Colter", "dog", "male", "1", 1, "4", "80.0", "2020-06-01", "2020-12-09T10:15:30");
